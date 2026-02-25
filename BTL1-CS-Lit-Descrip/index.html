@@ -1,1 +1,550 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitLector — BTL1 [CS, Lit., Descrip]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --ink: #1a1a2e;
+      --paper: #faf8f3;
+      --accent: #c84b31;
+      --accent2: #2d6a4f;
+      --gold: #e9c46a;
+      --muted: #7a7568;
+      --border: #e2ddd5;
+      --success: #2d6a4f;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23faf8f3'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23e8e3d9' opacity='0.4'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, #fff, var(--paper));
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--ink);
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 em { color: var(--accent); font-style: italic; }
+
+    .paquet-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .flux {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .flux-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .flux-icon { font-size: 1.8rem; line-height: 1; }
+
+    .flux-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .flux-arrow {
+      color: var(--border);
+      font-size: 1.4rem;
+      padding: 0 0.2rem;
+      align-self: center;
+    }
+
+    .flux-step.highlight .flux-icon {
+      background: var(--accent2);
+      color: white;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .flux-step.highlight .flux-label { color: var(--accent2); font-weight: 600; }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 0 2px 20px rgba(26,26,46,0.06), 0 1px 4px rgba(26,26,46,0.04);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: var(--ink);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .card-body { padding: 2rem; }
+
+    .instruction {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .instruction strong { color: var(--ink); font-weight: 500; }
+
+    .input-group { margin-bottom: 1.5rem; }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.88rem;
+      color: var(--ink);
+      background: var(--paper);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(200,75,49,0.08);
+      background: white;
+    }
+
+    input[type="text"]::placeholder { color: #c5bfb5; }
+
+    .input-hint {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .url-example {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.85rem 1rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      word-break: break-all;
+    }
+
+    .url-example .highlight-id {
+      color: var(--accent);
+      font-weight: 500;
+      background: rgba(200,75,49,0.08);
+      padding: 0.1em 0.2em;
+      border-radius: 2px;
+    }
+
+    .btn-download {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-download:hover {
+      background: #b03d28;
+      box-shadow: 0 4px 16px rgba(200,75,49,0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-download:active { transform: translateY(0); }
+
+    .btn-download:disabled {
+      background: var(--border);
+      color: var(--muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      color: var(--success);
+      line-height: 1.5;
+    }
+
+    .success-msg.visible {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    .info-box {
+      background: var(--paper);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.2rem;
+      border-radius: 0 3px 3px 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .info-box strong { color: var(--ink); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .error-msg { display: none; margin-top: 0.5rem; font-size: 0.8rem; color: var(--accent); }
+    .error-msg.visible { display: block; }
+
+    @media (max-width: 480px) {
+      .flux { gap: 0; padding: 1rem; }
+      .flux-step { padding: 0.6rem 0.5rem; }
+      .card-body { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-badge">📚 BitLector</div>
+  <div class="paquet-tag">BTL1 · Cicle Superior · Literatura · Descripció</div>
+  <h1>Configura el teu<br><em>programa de lectura</em></h1>
+  <p class="subtitle">Enganxa l'enllaç del teu Google Forms i descarrega el programa ja configurat per als teus alumnes.</p>
+</header>
+
+<div class="flux">
+  <div class="flux-step">
+    <div class="flux-icon">📋</div>
+    <div class="flux-label">Copes el<br>teu Forms</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step highlight">
+    <div class="flux-icon">⚙️</div>
+    <div class="flux-label">Configures<br>aquí</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step">
+    <div class="flux-icon">💾</div>
+    <div class="flux-label">Descarregues<br>el programa</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step">
+    <div class="flux-icon">📊</div>
+    <div class="flux-label">Dades al teu<br>Google Sheets</div>
+  </div>
+</div>
+
+<main>
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">1</div>
+      <h2>Copia el teu Google Forms</h2>
+    </div>
+    <div class="card-body">
+      <p class="instruction">
+        Fes clic al botó per crear una còpia del formulari de recollida de dades al teu Google Drive.
+        Serà <strong>completament teu</strong> i les dades dels teus alumnes hi aniran directament.
+      </p>
+      <a href="https://docs.google.com/forms/d/1lhlOsUNR9Vvn-i4GYF4AT4OxIdd_UXCY4-juE4cJG9w/copy"
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:var(--gold);padding:0.7rem 1.2rem;border-radius:3px;text-decoration:none;font-size:0.88rem;font-weight:500;letter-spacing:0.03em;margin-bottom:1rem;">
+        📋 Fer una còpia del formulari
+      </a>
+      <div class="info-box">
+        <p>Google et demanarà confirmació. Fes clic a <strong>"Fer una còpia"</strong>. Un cop obert el teu formulari, fes clic al botó <strong>"Publica"</strong> (a dalt a la dreta) → icona de l'enllaç 🔗 → <strong>copia la URL</strong> que apareix. La necessitaràs al pas 2.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:1.5rem"></div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">2</div>
+      <h2>Publica el formulari i enganxa la URL</h2>
+    </div>
+    <div class="card-body">
+      <p class="instruction">
+        Obre el formulari que acabes de copiar. Fes clic al botó <strong>"Publica"</strong> (a dalt a la dreta) i després a la icona de l'<strong>enllaç 🔗</strong>. Copia la URL sencera que apareix i enganxa-la aquí:
+      </p>
+
+      <div class="url-example">
+        <span class="highlight-id">https://docs.google.com/forms/d/e/1FAIpQLSc_AQUESTA_ÉS_LA_TEVA_URL/viewform</span>
+      </div>
+
+      <div class="input-group">
+        <label for="formURL">URL del teu Google Forms</label>
+        <input
+          type="text"
+          id="formURL"
+          placeholder="https://docs.google.com/forms/d/e/1FAIpQLSc..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <div class="error-msg" id="errorMsg">⚠️ Si us plau, enganxa la URL completa del teu formulari.</div>
+        <p class="input-hint">La URL sencera, tal com la veus al navegador. El sistema extraurà automàticament la ID.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="btn-download" id="btnDownload" onclick="generarHTML()">
+        <span>⬇️</span> Descarregar el meu programa configurat
+      </button>
+
+      <div class="success-msg" id="successMsg">
+        <span>✅</span>
+        <span>El fitxer <strong>BTL1-CS-Lit-Descrip.html</strong> s'ha descarregat correctament. Obre'l amb el navegador per començar a usar-lo amb els teus alumnes.</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  BitLector · BTL1 [CS, Lit., Descrip] · Les dades van directament al teu Google Drive
+</footer>
+
+<script>
+// ─── CONFIGURACIÓ DELS CAMPS ───────────────────────────────────────────────
+const ENTRY_NOM     = "entry.810214983";
+const ENTRY_NIVELL  = "entry.1550878135";
+const ENTRY_ENCERTS = "entry.1012154125";
+const ENTRY_ERRORS  = "entry.2104514641";
+const ENTRY_PISTES  = "entry.1517038446";
+const ENTRY_TEXT    = "entry.1305797429";
+const ENTRY_NOTA    = "entry.1542568576";
+
+// ─── FUNCIÓ QUE S'INJECTARÀ AL TWINE ──────────────────────────────────────
+function getJavascriptTwine(formID) {
+  return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText) {
+  var notaMaxima, factor;
+  if (nivell === "AS") { notaMaxima = 7.0; factor = 0.15; }
+  else if (nivell === "AN") { notaMaxima = 8.0; factor = 0.20; }
+  else { notaMaxima = 10.0; factor = 0.25; }
+  var errorsEfectius = Math.max(0, errors - 1);
+  var notaBruta = notaMaxima / (1 + errorsEfectius * factor);
+  var nota = Math.round(notaBruta * 10) / 10;
+  nota = Math.max(1.0, nota);
+  var formID = "${formID}";
+  var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
+    "${ENTRY_NOM}=" + encodeURIComponent(nom) + "&" +
+    "${ENTRY_NIVELL}=" + encodeURIComponent(nivell) + "&" +
+    "${ENTRY_ENCERTS}=" + encerts + "&" +
+    "${ENTRY_ERRORS}=" + errors + "&" +
+    "${ENTRY_PISTES}=" + pistes + "&" +
+    "${ENTRY_TEXT}=" + encodeURIComponent(idText) + "&" +
+    "${ENTRY_NOTA}=" + nota;
+  fetch(url, { mode: 'no-cors' });
+  alert("Dades enviades. La nota és " + nota + ". Bona feina, " + nom + "!");
+};`;
+}
+
+// ─── GENERACIÓ I DESCÀRREGA ────────────────────────────────────────────────
+async function generarHTML() {
+  const inputVal = document.getElementById('formURL').value.trim();
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+  const btn = document.getElementById('btnDownload');
+
+  // Extracció automàtica de la ID de la URL sencera
+  let formID = inputVal;
+  const match = inputVal.match(/\/forms\/d\/e\/([^\/\?]+)/);
+  if (match) formID = match[1];
+
+  // Validació
+  if (!formID || formID.length < 20) {
+    errorMsg.classList.add('visible');
+    document.getElementById('formURL').focus();
+    return;
+  }
+  errorMsg.classList.remove('visible');
+
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Generant el fitxer...';
+
+  try {
+    const response = await fetch('base.html');
+    if (!response.ok) throw new Error('No s\'ha pogut carregar base.html');
+    let contingut = await response.text();
+
+    const jsPersonalitzat = getJavascriptTwine(formID);
+    contingut = contingut.replace('/* INJECT_ENVIAR_DADES */', jsPersonalitzat);
+
+    const blob = new Blob([contingut], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'BTL1-CS-Lit-Descrip.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    successMsg.classList.add('visible');
+
+  } catch (err) {
+    alert('Error: ' + err.message + '\n\nAssegura\'t que el fitxer base.html està pujat al repositori.');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<span>⬇️</span> Descarregar el meu programa configurat';
+}
+
+// Neteja errors mentre escriu
+document.getElementById('formURL').addEventListener('input', () => {
+  document.getElementById('errorMsg').classList.remove('visible');
+  document.getElementById('successMsg').classList.remove('visible');
+});
+</script>
+
+</body>
+</html>

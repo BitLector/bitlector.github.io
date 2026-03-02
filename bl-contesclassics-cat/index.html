@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BL: Contes Clàssics — Configuració</title>
+  <title>BitLector — BL-ContesClassics_CAT [CS, Contes Clàssics-CAT]</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,6 +16,7 @@
       --gold: #e9c46a;
       --muted: #7a7568;
       --border: #e2ddd5;
+      --success: #2d6a4f;
     }
 
     body {
@@ -44,7 +45,7 @@
       background: linear-gradient(to bottom, #fff, var(--paper));
     }
 
-    .paquet-tag {
+    .logo-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -61,124 +62,276 @@
 
     h1 {
       font-family: 'Lora', serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 600;
       color: var(--ink);
       line-height: 1.2;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
     }
 
-    h1 .emoji { font-style: normal; }
+    h1 em { color: var(--accent); font-style: italic; }
+
+    .paquet-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
 
     .subtitle {
-      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
+    .flux {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .flux-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .flux-icon { font-size: 1.8rem; line-height: 1; }
+
+    .flux-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .flux-arrow {
+      color: var(--border);
+      font-size: 1.4rem;
+      padding: 0 0.2rem;
+      align-self: center;
+    }
+
+    .flux-step.highlight .flux-icon {
+      background: var(--accent2);
+      color: white;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .flux-step.highlight .flux-label { color: var(--accent2); font-weight: 600; }
+
     main {
       position: relative;
       z-index: 1;
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 5rem;
+      padding: 0 1.5rem 4rem;
     }
 
-    .config-box {
+    .card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 2rem;
-      margin-bottom: 2rem;
+      box-shadow: 0 2px 20px rgba(26,26,46,0.06), 0 1px 4px rgba(26,26,46,0.04);
+      overflow: hidden;
     }
+
+    .card-header {
+      background: var(--ink);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .card-body { padding: 2rem; }
+
+    .instruction {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .instruction strong { color: var(--ink); font-weight: 500; }
+
+    .input-group { margin-bottom: 1.5rem; }
 
     label {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.78rem;
       font-weight: 500;
-      color: var(--ink);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 0.5rem;
     }
 
     input[type="text"] {
       width: 100%;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border);
       border-radius: 3px;
-      background: var(--paper);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.88rem;
       color: var(--ink);
-      margin-bottom: 1.2rem;
+      background: var(--paper);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
     }
 
     input[type="text"]:focus {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(200,75,49,0.08);
+      background: white;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--ink);
-      color: var(--gold);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      padding: 0.9rem 2rem;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background 0.2s;
+    input[type="text"]::placeholder { color: #c5bfb5; }
+
+    .input-hint {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
     }
 
-    .btn:hover { background: #2d2d4e; }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    .textos-list {
+    .url-example {
       background: var(--paper);
       border: 1px solid var(--border);
       border-radius: 3px;
-      padding: 1.2rem 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .textos-list h3 {
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.8rem;
-    }
-
-    .textos-list ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .textos-list li {
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding: 0.3rem 0;
-      border-bottom: 1px dotted var(--border);
-    }
-
-    .textos-list li:last-child { border-bottom: none; }
-
-    .alerta {
-      background: #fff8e1;
-      border-left: 3px solid var(--gold);
-      padding: 0.9rem 1.2rem;
-      border-radius: 0 3px 3px 0;
-      font-size: 0.88rem;
+      padding: 0.85rem 1rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.6;
-      margin: 1.5rem 0;
+      margin-bottom: 1.5rem;
+      word-break: break-all;
     }
 
-    .alerta strong { color: var(--ink); }
+    .url-example .highlight-id {
+      color: var(--accent);
+      font-weight: 500;
+      background: rgba(200,75,49,0.08);
+      padding: 0.1em 0.2em;
+      border-radius: 2px;
+    }
+
+    .btn-download {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-download:hover {
+      background: #b03d28;
+      box-shadow: 0 4px 16px rgba(200,75,49,0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-download:active { transform: translateY(0); }
+
+    .btn-download:disabled {
+      background: var(--border);
+      color: var(--muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      color: var(--success);
+      line-height: 1.5;
+    }
+
+    .success-msg.visible {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    .info-box {
+      background: var(--paper);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.2rem;
+      border-radius: 0 3px 3px 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .info-box strong { color: var(--ink); }
 
     footer {
       position: relative;
@@ -189,137 +342,216 @@
       color: var(--muted);
       border-top: 1px solid var(--border);
     }
+
+    .error-msg { display: none; margin-top: 0.5rem; font-size: 0.8rem; color: var(--accent); }
+    .error-msg.visible { display: block; }
+
+    @media (max-width: 480px) {
+      .flux { gap: 0; padding: 1rem; }
+      .flux-step { padding: 0.6rem 0.5rem; }
+      .card-body { padding: 1.5rem; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="paquet-tag">📚 BL-ContesClassics_CAT · Cicle Superior · Contes Clàssics · Català</div>
-  <h1><span class="emoji">📚</span> BL: Contes Clàssics</h1>
-  <p class="subtitle">Configuració del paquet per generar el fitxer d'activitat personalitzat per a la teva classe.</p>
+  <div class="logo-badge">📚 BitLector</div>
+  <div class="paquet-tag">BL-ContesClassics_CAT · Cicle Superior · Contes Clàssics · Català</div>
+  <h1>Configura el teu<br><em>programa de lectura</em></h1>
+  <p class="subtitle">Enganxa l'enllaç del teu Google Forms i descarrega el programa ja configurat per als teus alumnes.</p>
 </header>
 
+<div class="flux">
+  <div class="flux-step">
+    <div class="flux-icon">📋</div>
+    <div class="flux-label">Copes el<br>teu Forms</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step highlight">
+    <div class="flux-icon">⚙️</div>
+    <div class="flux-label">Configures<br>aquí</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step">
+    <div class="flux-icon">💾</div>
+    <div class="flux-label">Descarregues<br>el programa</div>
+  </div>
+  <div class="flux-arrow">→</div>
+  <div class="flux-step">
+    <div class="flux-icon">📊</div>
+    <div class="flux-label">Dades al teu<br>Google Sheets</div>
+  </div>
+</div>
+
 <main>
-  <div class="config-box">
-    <label for="formsUrl">📋 URL del teu Google Forms (còpia del formulari)</label>
-    <input type="text" id="formsUrl" placeholder="https://docs.google.com/forms/d/e/1FAIpQ.../viewform">
-
-    <div class="alerta">
-      <strong>💡 Com obtenir la URL:</strong> Obre el formulari que has creat fent servir l'enllaç <code>/copy</code> → Envia → Copia l'enllaç i enganxa'l aquí dalt.
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">1</div>
+      <h2>Copia el teu Google Forms</h2>
     </div>
-
-    <button class="btn" id="btnGenerar">⬇️ Generar i descarregar fitxer</button>
+    <div class="card-body">
+      <p class="instruction">
+        Fes clic al botó per crear una còpia del formulari de recollida de dades al teu Google Drive.
+        Serà <strong>completament teu</strong> i les dades dels teus alumnes hi aniran directament.
+      </p>
+      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy"
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:var(--gold);padding:0.7rem 1.2rem;border-radius:3px;text-decoration:none;font-size:0.88rem;font-weight:500;letter-spacing:0.03em;margin-bottom:1rem;">
+        📋 Fer una còpia del formulari
+      </a>
+      <div class="info-box">
+        <p>Google et demanarà confirmació. Fes clic a <strong>"Fer una còpia"</strong>. Un cop obert el teu formulari, fes clic al botó <strong>"Publica"</strong> (a dalt a la dreta) → icona de l'enllaç 🔗 → <strong>copia la URL</strong> que apareix. La necessitaràs al pas 2.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="textos-list">
-    <h3>📖 Textos inclosos en aquest paquet:</h3>
-    <ul>
-      <li>T1: El sastre valent</li>
-      <li>T2: Hansel i Gretel</li>
-      <li>T3: Els músics de Bremen</li>
-      <li>T4: En Joan de Ferro</li>
-      <li>T5: En Pere i la mongetera</li>
-    </ul>
+  <div style="height:1.5rem"></div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">2</div>
+      <h2>Publica el formulari i enganxa la URL</h2>
+    </div>
+    <div class="card-body">
+      <p class="instruction">
+        Obre el formulari que acabes de copiar. Fes clic al botó <strong>"Publica"</strong> (a dalt a la dreta) i després a la icona de l'<strong>enllaç 🔗</strong>. Copia la URL sencera que apareix i enganxa-la aquí:
+      </p>
+
+      <div class="url-example">
+        <span class="highlight-id">https://docs.google.com/forms/d/e/1FAIpQLSc_AQUESTA_ÉS_LA_TEVA_URL/viewform</span>
+      </div>
+
+      <div class="input-group">
+        <label for="formURL">URL del teu Google Forms</label>
+        <input
+          type="text"
+          id="formURL"
+          placeholder="https://docs.google.com/forms/d/e/1FAIpQLSc..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <div class="error-msg" id="errorMsg">⚠️ Si us plau, enganxa la URL completa del teu formulari.</div>
+        <p class="input-hint">La URL sencera, tal com la veus al navegador. El sistema extraurà automàticament la ID.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="btn-download" id="btnDownload" onclick="generarHTML()">
+        <span>⬇️</span> Descarregar el meu programa configurat
+      </button>
+
+      <div class="success-msg" id="successMsg">
+        <span>✅</span>
+        <span>El fitxer <strong>BL-ContesClassics-CAT.html</strong> s'ha descarregat correctament. Obre'l amb el navegador per començar a usar-lo amb els teus alumnes.</span>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer>
-  BitLector · BL-ContesClassics_CAT · Sistema de comprensió lectora interactiva
+  BitLector · BL-ContesClassics_CAT [CS, Contes Clàssics-CAT] · Les dades van directament al teu Google Drive
 </footer>
 
 <script>
-document.getElementById('btnGenerar').addEventListener('click', function() {
-  var url = document.getElementById('formsUrl').value.trim();
-  
-  if (!url) {
-    alert('⚠️ Enganxa la URL del teu Google Forms abans de continuar.');
-    return;
-  }
+// ─── CONFIGURACIÓ DELS CAMPS ───────────────────────────────────────────────
+const ENTRY_NOM      = "entry.810214983";
+const ENTRY_NIVELL   = "entry.1550878135";
+const ENTRY_ENCERTS  = "entry.1012154125";
+const ENTRY_ERRORS   = "entry.2104514641";
+const ENTRY_PISTES   = "entry.1517038446";
+const ENTRY_TEXT     = "entry.1305797429";
+const ENTRY_ENCERTS_L = "entry.2010382620";
+const ENTRY_TOTAL_L   = "entry.161341617";
+const ENTRY_ENCERTS_I = "entry.1192776101";
+const ENTRY_TOTAL_I   = "entry.1047048577";
+const ENTRY_ENCERTS_G = "entry.1992687778";
+const ENTRY_TOTAL_G   = "entry.1578007194";
 
-  // Extreure la ID del Forms
-  var match = url.match(/\/d\/e\/([^\/]+)/);
-  if (!match) {
-    match = url.match(/\/d\/([^\/]+)/);
-    if (match) {
-      var formID = match[1];
-    } else {
-      alert('⚠️ La URL del Forms no és vàlida. Comprova que contingui /d/e/ o /d/');
-      return;
-    }
-  } else {
-    var formID = match[1];
-  }
-
-  // Carregar base.html i injectar la funció
-  fetch('base.html')
-    .then(response => response.text())
-    .then(baseHTML => {
-      
-      var funcioEnviar = `
-window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, id_text, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
-  var formID = "${formID}";
-  var entryNom      = "entry.810214983";
-  var entryNivell   = "entry.1550878135";
-  var entryEncerts  = "entry.1012154125";
-  var entryErrors   = "entry.2104514641";
-  var entryPistes   = "entry.1517038446";
-  var entryIdText   = "entry.1305797429";
-  var entryEncertsL = "entry.2010382620";
-  var entryEncertsI = "entry.1192776101";
-  var entryEncertsG = "entry.1992687778";
-  var entryTotalL   = "entry.161341617";
-  var entryTotalI   = "entry.1047048577";
-  var entryTotalG   = "entry.1578007194";
-
+// ─── FUNCIÓ QUE S'INJECTARÀ AL TWINE ──────────────────────────────────────
+function getJavascriptTwine(formID) {
+  return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
   var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
   var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
   var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
-
+  var formID = "${formID}";
   var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
-            entryNom      + "=" + encodeURIComponent(nom)     + "&" +
-            entryNivell   + "=" + encodeURIComponent(nivell)  + "&" +
-            entryEncerts  + "=" + encerts                      + "&" +
-            entryErrors   + "=" + errors                       + "&" +
-            entryPistes   + "=" + pistes                       + "&" +
-            entryIdText   + "=" + encodeURIComponent(id_text) + "&" +
-            entryEncertsL + "=" + encertsL                     + "&" +
-            entryEncertsI + "=" + encertsI                     + "&" +
-            entryEncertsG + "=" + encertsG                     + "&" +
-            entryTotalL   + "=" + totalL                       + "&" +
-            entryTotalI   + "=" + totalI                       + "&" +
-            entryTotalG   + "=" + totalG;
+    "${ENTRY_NOM}="      + encodeURIComponent(nom)    + "&" +
+    "${ENTRY_NIVELL}="   + encodeURIComponent(nivell) + "&" +
+    "${ENTRY_ENCERTS}="  + encerts                    + "&" +
+    "${ENTRY_ERRORS}="   + errors                     + "&" +
+    "${ENTRY_PISTES}="   + pistes                     + "&" +
+    "${ENTRY_TEXT}="     + encodeURIComponent(idText) + "&" +
+    "${ENTRY_ENCERTS_L}=" + encertsL                  + "&" +
+    "${ENTRY_TOTAL_L}="   + totalL                    + "&" +
+    "${ENTRY_ENCERTS_I}=" + encertsI                  + "&" +
+    "${ENTRY_TOTAL_I}="   + totalI                    + "&" +
+    "${ENTRY_ENCERTS_G}=" + encertsG                  + "&" +
+    "${ENTRY_TOTAL_G}="   + totalG;
+  fetch(url, { mode: 'no-cors' });
+  alert("✅ Dades enviades!\\n" +
+        "📖 Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
+        "🔍 Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
+        "🌐 Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)\\n\\n" +
+        "Molt bé, " + nom + "!");
+};`;
+}
 
-  fetch(url, { mode: 'no-cors' })
-    .then(function() {
-      alert("✅ Dades enviades correctament!\\n\\n" +
-            "📖 Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
-            "🔍 Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
-            "🌐 Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)\\n\\n" +
-            "Molt bé, " + nom + "!");
-    })
-    .catch(function(error) {
-      console.error('Error enviant:', error);
-      alert("❌ Hi ha hagut un problema enviant les dades. Comprova la connexió a Internet.");
-    });
-};
-`;
+// ─── GENERACIÓ I DESCÀRREGA ────────────────────────────────────────────────
+async function generarHTML() {
+  const inputVal = document.getElementById('formURL').value.trim();
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+  const btn = document.getElementById('btnDownload');
 
-      // Substituir el marcador
-      var htmlFinal = baseHTML.replace('/* INJECT_ENVIAR_DADES */', funcioEnviar);
+  // Extracció automàtica de la ID de la URL sencera
+  let formID = inputVal;
+  const match = inputVal.match(/\/forms\/d\/e\/([^\/\?]+)/);
+  if (match) formID = match[1];
 
-      // Descarregar el fitxer
-      var blob = new Blob([htmlFinal], { type: 'text/html' });
-      var link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'BL-ContesClassics-CAT.html';
-      link.click();
+  // Validació
+  if (!formID || formID.length < 20) {
+    errorMsg.classList.add('visible');
+    document.getElementById('formURL').focus();
+    return;
+  }
+  errorMsg.classList.remove('visible');
 
-      alert('✅ Fitxer generat! Ara el pots obrir amb un navegador i provar-lo.');
-    })
-    .catch(function(error) {
-      console.error('Error carregant base.html:', error);
-      alert('❌ No s\'ha pogut carregar base.html. Comprova que el fitxer existeix a la mateixa carpeta.');
-    });
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Generant el fitxer...';
+
+  try {
+    const response = await fetch('base.html');
+    if (!response.ok) throw new Error('No s\'ha pogut carregar base.html');
+    let contingut = await response.text();
+
+    const jsPersonalitzat = getJavascriptTwine(formID);
+    contingut = contingut.replace('/* INJECT_ENVIAR_DADES */', jsPersonalitzat);
+
+    const blob = new Blob([contingut], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'BL-ContesClassics-CAT.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    successMsg.classList.add('visible');
+
+  } catch (err) {
+    alert('Error: ' + err.message + '\n\nAssegura\'t que el fitxer base.html està pujat al repositori.');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<span>⬇️</span> Descarregar el meu programa configurat';
+}
+
+// Neteja errors mentre escriu
+document.getElementById('formURL').addEventListener('input', () => {
+  document.getElementById('errorMsg').classList.remove('visible');
+  document.getElementById('successMsg').classList.remove('visible');
 });
 </script>
 

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BL: Contes Clàssics — Configuració</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a2e;
+      --paper: #faf8f3;
+      --accent: #c84b31;
+      --accent2: #2d6a4f;
+      --gold: #e9c46a;
+      --muted: #7a7568;
+      --border: #e2ddd5;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23faf8f3'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23e8e3d9' opacity='0.4'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, #fff, var(--paper));
+    }
+
+    .paquet-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--ink);
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 .emoji { font-style: normal; }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .config-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--paper);
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+
+    input[type="text"]:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 0.9rem 2rem;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: #2d2d4e; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .textos-list {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .textos-list h3 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+
+    .textos-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .textos-list li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      border-bottom: 1px dotted var(--border);
+    }
+
+    .textos-list li:last-child { border-bottom: none; }
+
+    .alerta {
+      background: #fff8e1;
+      border-left: 3px solid var(--gold);
+      padding: 0.9rem 1.2rem;
+      border-radius: 0 3px 3px 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 1.5rem 0;
+    }
+
+    .alerta strong { color: var(--ink); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="paquet-tag">📚 BL-ContesClassics_CAT · Cicle Superior · Contes Clàssics · Català</div>
+  <h1><span class="emoji">📚</span> BL: Contes Clàssics</h1>
+  <p class="subtitle">Configuració del paquet per generar el fitxer d'activitat personalitzat per a la teva classe.</p>
+</header>
+
+<main>
+  <div class="config-box">
+    <label for="formsUrl">📋 URL del teu Google Forms (còpia del formulari)</label>
+    <input type="text" id="formsUrl" placeholder="https://docs.google.com/forms/d/e/1FAIpQ.../viewform">
+
+    <div class="alerta">
+      <strong>💡 Com obtenir la URL:</strong> Obre el formulari que has creat fent servir l'enllaç <code>/copy</code> → Envia → Copia l'enllaç i enganxa'l aquí dalt.
+    </div>
+
+    <button class="btn" id="btnGenerar">⬇️ Generar i descarregar fitxer</button>
+  </div>
+
+  <div class="textos-list">
+    <h3>📖 Textos inclosos en aquest paquet:</h3>
+    <ul>
+      <li>T1: El sastre valent</li>
+      <li>T2: Hansel i Gretel</li>
+      <li>T3: Els músics de Bremen</li>
+      <li>T4: En Joan de Ferro</li>
+      <li>T5: En Pere i la mongetera</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  BitLector · BL-ContesClassics_CAT · Sistema de comprensió lectora interactiva
+</footer>
+
+<script>
+document.getElementById('btnGenerar').addEventListener('click', function() {
+  var url = document.getElementById('formsUrl').value.trim();
+  
+  if (!url) {
+    alert('⚠️ Enganxa la URL del teu Google Forms abans de continuar.');
+    return;
+  }
+
+  // Extreure la ID del Forms
+  var match = url.match(/\/d\/e\/([^\/]+)/);
+  if (!match) {
+    match = url.match(/\/d\/([^\/]+)/);
+    if (match) {
+      var formID = match[1];
+    } else {
+      alert('⚠️ La URL del Forms no és vàlida. Comprova que contingui /d/e/ o /d/');
+      return;
+    }
+  } else {
+    var formID = match[1];
+  }
+
+  // Carregar base.html i injectar la funció
+  fetch('base.html')
+    .then(response => response.text())
+    .then(baseHTML => {
+      
+      var funcioEnviar = `
+window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, id_text, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
+  var formID = "${formID}";
+  var entryNom      = "entry.810214983";
+  var entryNivell   = "entry.1550878135";
+  var entryEncerts  = "entry.1012154125";
+  var entryErrors   = "entry.2104514641";
+  var entryPistes   = "entry.1517038446";
+  var entryIdText   = "entry.1305797429";
+  var entryEncertsL = "entry.2010382620";
+  var entryEncertsI = "entry.1192776101";
+  var entryEncertsG = "entry.1992687778";
+  var entryTotalL   = "entry.161341617";
+  var entryTotalI   = "entry.1047048577";
+  var entryTotalG   = "entry.1578007194";
+
+  var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
+  var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
+  var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
+
+  var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
+            entryNom      + "=" + encodeURIComponent(nom)     + "&" +
+            entryNivell   + "=" + encodeURIComponent(nivell)  + "&" +
+            entryEncerts  + "=" + encerts                      + "&" +
+            entryErrors   + "=" + errors                       + "&" +
+            entryPistes   + "=" + pistes                       + "&" +
+            entryIdText   + "=" + encodeURIComponent(id_text) + "&" +
+            entryEncertsL + "=" + encertsL                     + "&" +
+            entryEncertsI + "=" + encertsI                     + "&" +
+            entryEncertsG + "=" + encertsG                     + "&" +
+            entryTotalL   + "=" + totalL                       + "&" +
+            entryTotalI   + "=" + totalI                       + "&" +
+            entryTotalG   + "=" + totalG;
+
+  fetch(url, { mode: 'no-cors' })
+    .then(function() {
+      alert("✅ Dades enviades correctament!\\n\\n" +
+            "📖 Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
+            "🔍 Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
+            "🌐 Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)\\n\\n" +
+            "Molt bé, " + nom + "!");
+    })
+    .catch(function(error) {
+      console.error('Error enviant:', error);
+      alert("❌ Hi ha hagut un problema enviant les dades. Comprova la connexió a Internet.");
+    });
+};
+`;
+
+      // Substituir el marcador
+      var htmlFinal = baseHTML.replace('/* INJECT_ENVIAR_DADES */', funcioEnviar);
+
+      // Descarregar el fitxer
+      var blob = new Blob([htmlFinal], { type: 'text/html' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'BL-ContesClassics-CAT.html';
+      link.click();
+
+      alert('✅ Fitxer generat! Ara el pots obrir amb un navegador i provar-lo.');
+    })
+    .catch(function(error) {
+      console.error('Error carregant base.html:', error);
+      alert('❌ No s\'ha pogut carregar base.html. Comprova que el fitxer existeix a la mateixa carpeta.');
+    });
+});
+</script>
+
+</body>
+</html>

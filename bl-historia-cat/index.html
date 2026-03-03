@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitLector — BL-HI1 [CS/1r ESO, Etapes Història-CAT]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Space+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #2A1810;
+      --paper: #FDF6EE;
+      --accent: #E05C3A;
+      --accent-light: #F0957A;
+      --terracota: #8B2A14;
+      --muted: #6B5E4F;
+      --border: #E8D9C5;
+      --success: #2A1810;
+    }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      background: linear-gradient(to bottom, #fff, var(--paper));
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .logo span { color: var(--accent); }
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .card-header {
+      background: var(--ink);
+      color: white;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-weight: 500;
+    }
+    .card-body { padding: 1.8rem; }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+    input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(224,92,58,0.2); }
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem 1.8rem;
+      border-radius: 6px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--terracota); }
+    .error { color: var(--terracota); display: none; margin-top: 0.5rem; }
+    .success { color: #2A1810; background: #E8F5E9; padding: 1rem; border-radius: 6px; margin-top: 1rem; display: none; }
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
 
+<header>
+  <div class="logo">Bit<span>LECTOR</span></div>
+  <div class="tag">📜 BL-HI1 · Cicle Superior / 1r ESO · Etapes de la història</div>
+  <h1>Configura el teu paquet</h1>
+</header>
+
+<main>
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">1</div>
+      <h2>Fes una còpia del formulari</h2>
+    </div>
+    <div class="card-body">
+      <p>Fes clic aquí sota per crear el teu propi Google Form (es copiarà automàticament al teu Drive):</p>
+      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy" target="_blank" class="btn" style="display:block; text-align:center; text-decoration:none; margin:1.5rem 0;">
+        📋 Fer una còpia del formulari
+      </a>
+      <p style="font-size:0.95rem; color:var(--muted);">Un cop obert → clica <strong>Publica</strong> (dalt a la dreta) → icona 🔗 → copia la URL completa.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">2</div>
+      <h2>Enganxa la URL i descarrega</h2>
+    </div>
+    <div class="card-body">
+      <label for="formURL">URL del teu Google Form</label>
+      <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLS.../viewform">
+      <div id="errorMsg" class="error">⚠️ Si us plau, enganxa la URL completa.</div>
+
+      <button id="btnGenerate" class="btn" style="margin-top:1.5rem; width:100%;">⬇️ Descarregar el meu programa configurat</button>
+
+      <div id="successMsg" class="success">
+        ✅ Descarregat! Obre <strong>BL-CS-Historia-CAT.html</strong> per provar-lo.
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>BitLector · Les dades van directament al teu Google Drive</footer>
+
+<script>
+// ─── IDs DEL FORM ───────────────────────────────────────────────
+const ENTRY_NOM      = "entry.810214983";
+const ENTRY_NIVELL   = "entry.1550878135";
+const ENTRY_ENCERTS  = "entry.1012154125";
+const ENTRY_ERRORS   = "entry.2104514641";
+const ENTRY_PISTES   = "entry.1517038446";
+const ENTRY_TEXT     = "entry.1305797429";
+const ENTRY_ENCERTS_L = "entry.2010382620";
+const ENTRY_TOTAL_L   = "entry.161341617";
+const ENTRY_ENCERTS_I = "entry.1192776101";
+const ENTRY_TOTAL_I   = "entry.1047048577";
+const ENTRY_ENCERTS_G = "entry.1992687778";
+const ENTRY_TOTAL_G   = "entry.1578007194";
+
+// ─── FUNCIÓ INJECTABLE ──────────────────────────────────────────
+function getJavascriptTwine(formID) {
+  return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
+  var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
+  var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
+  var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
+  var formID = "${formID}";
+  var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
+    "${ENTRY_NOM}="      + encodeURIComponent(nom)    + "&" +
+    "${ENTRY_NIVELL}="   + encodeURIComponent(nivell) + "&" +
+    "${ENTRY_ENCERTS}="  + encerts                    + "&" +
+    "${ENTRY_ERRORS}="   + errors                     + "&" +
+    "${ENTRY_PISTES}="   + pistes                     + "&" +
+    "${ENTRY_TEXT}="     + encodeURIComponent(idText) + "&" +
+    "${ENTRY_ENCERTS_L}=" + encertsL                  + "&" +
+    "${ENTRY_TOTAL_L}="   + totalL                    + "&" +
+    "${ENTRY_ENCERTS_I}=" + encertsI                  + "&" +
+    "${ENTRY_TOTAL_I}="   + totalI                    + "&" +
+    "${ENTRY_ENCERTS_G}=" + encertsG                  + "&" +
+    "${ENTRY_TOTAL_G}="   + totalG;
+  fetch(url, { mode: 'no-cors' });
+  alert("✅ Molt bé, " + nom + "!\\n" +
+        "📜 Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
+        "🔍 Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
+        "🌍 Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)");
+};`;
+}
+
+document.getElementById('btnGenerate').addEventListener('click', async () => {
+  const urlInput = document.getElementById('formURL').value.trim();
+  const error = document.getElementById('errorMsg');
+  const success = document.getElementById('successMsg');
+  const btn = document.getElementById('btnGenerate');
+
+  let formID = urlInput.match(/\/d\/e\/([^\/]+)/)?.[1] || urlInput;
+  if (!formID || formID.length < 20) {
+    error.style.display = 'block';
+    return;
+  }
+  error.style.display = 'none';
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Generant...';
+
+  try {
+    const res = await fetch('base.html');
+    if (!res.ok) throw new Error('No es troba base.html');
+    let html = await res.text();
+
+    const jsCode = getJavascriptTwine(formID);
+    html = html.replace('/* INJECT_ENVIAR_DADES */', jsCode);
+
+    const blob = new Blob([html], {type: 'text/html'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'BL-CS-Historia-CAT.html';
+    a.click();
+
+    success.style.display = 'block';
+  } catch (e) {
+    alert('Error: ' + e.message + '\\nAssegura\'t que base.html està al mateix directori o repositori.');
+  }
+
+  btn.disabled = false;
+  btn.textContent = '⬇️ Descarregar el meu programa configurat';
+});
+</script>
+</body>
+</html>

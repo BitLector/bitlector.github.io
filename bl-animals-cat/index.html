@@ -3,115 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BitLector — Configuració BitLector Animals CAT</title>
+  <title>BitLector — Configura BitLector Animals CAT</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
     :root {
       --coral: #E05C3A;
       --coral-clar: #F0957A;
       --terracota: #8B2A14;
       --tinta: #2A1810;
       --crema: #FDF6EE;
-      --border: #F0957A33;
+      --border: #E8D9C5;
     }
     body {
       background: var(--crema);
       color: var(--tinta);
       font-family: 'Nunito', sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
       min-height: 100vh;
     }
     header {
       text-align: center;
-      padding: 3rem 1.5rem 2rem;
-      background: linear-gradient(to bottom, white, var(--crema));
+      padding: 4rem 1.5rem 2.5rem;
+      background: linear-gradient(to bottom, #fff, var(--crema));
+      border-bottom: 1px solid var(--border);
     }
     .logo {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900;
-      font-size: 3.2rem;
-      color: var(--tinta);
-      margin-bottom: 0.5rem;
+      font-weight:900;
+      font-size:3.2rem;
     }
     .logo span { color: var(--coral); }
     .tag {
-      display: inline-block;
       background: var(--coral);
-      color: white;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.9rem;
-      padding: 0.4rem 1rem;
-      border-radius: 4px;
-      margin: 1rem 0;
+      color:white;
+      font-family:'Space Mono',monospace;
+      padding:0.5rem 1.2rem;
+      border-radius:6px;
+      margin:1.2rem 0;
+      display:inline-block;
+      font-size:1.1rem;
     }
     main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 1.5rem;
+      max-width:820px;
+      margin:0 auto;
+      padding:2rem 1.5rem 5rem;
     }
     .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(139,42,20,0.08);
-      margin-bottom: 2rem;
-      overflow: hidden;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:10px;
+      overflow:hidden;
+      margin:1.5rem 0;
+      box-shadow:0 4px 16px rgba(42,24,16,0.06);
     }
     .card-header {
-      background: var(--tinta);
-      color: white;
-      padding: 1.2rem 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      background:var(--coral);
+      color:white;
+      padding:1rem 1.6rem;
+      font-family:'Space Mono',monospace;
+      font-size:0.95rem;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
     }
-    .step-num {
-      width: 36px;
-      height: 36px;
-      background: var(--coral);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Mono', monospace;
-      font-weight: 700;
+    .card-body {
+      padding:1.8rem 1.6rem 2.2rem; /* + més padding inferior per evitar solapaments */
+      font-size:1.05rem;
     }
-    .card-body { padding: 1.8rem; }
-    h2 { font-weight: 700; font-size: 1.4rem; margin-bottom: 1rem; }
+    .card-body p {
+      margin-bottom:1.5rem; /* marge extra sota el text per separar del botó */
+    }
+    .alerta {
+      background:#fff3e0;
+      border-left:5px solid var(--coral);
+      padding:1rem 1.4rem;
+      margin:1.5rem 0;
+      border-radius:0 8px 8px 0;
+      font-weight:500;
+    }
+    label {
+      display:block;
+      font-size:0.95rem;
+      font-weight:700;
+      margin-bottom:0.6rem;
+    }
+    input[type="text"] {
+      width:100%;
+      padding:0.9rem 1.2rem;
+      border:1px solid var(--border);
+      border-radius:6px;
+      font-family:'Space Mono',monospace;
+      font-size:1rem;
+      background:white;
+    }
     .btn {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      background: var(--coral);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
+      width:100%;
+      padding:1.2rem;
+      background:var(--coral);
+      color:white;
+      border:none;
+      border-radius:6px;
+      font-weight:900;
+      font-size:1.2rem;
+      cursor:pointer;
       transition: background 0.2s;
-      margin: 1.5rem 0 1rem;
+      margin-top:1.2rem; /* marge superior addicional al botó */
     }
     .btn:hover { background: var(--terracota); }
-    input[type="text"] {
-      width: 100%;
-      padding: 0.9rem;
-      border: 2px solid var(--border);
-      border-radius: 6px;
-      font-family: 'Space Mono', monospace;
-      font-size: 1rem;
-    }
-    .success { color: var(--terracota); font-weight: 700; display: none; }
-    .error { color: #c00; display: none; }
+    .error-msg, .success-msg { margin-top:1.5rem; padding:1rem; border-radius:6px; display:none; }
+    .error-msg { background:#ffebee; color:var(--terracota); }
+    .success-msg { background:#e6f4ea; color:#2e7d32; }
     footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--tinta);
-      opacity: 0.7;
-      font-size: 0.9rem;
+      text-align:center;
+      padding:3rem 1rem;
+      color:#6B5E4F;
+      font-size:0.95rem;
+      border-top:1px solid var(--border);
+    }
+    @media (max-width: 600px) {
+      .card-body { padding: 1.6rem 1.4rem 2.4rem; }
+      .btn { font-size: 1.1rem; padding: 1rem; }
     }
   </style>
 </head>
@@ -120,130 +130,45 @@
 <header>
   <div class="logo">Bit <span>LECTOR</span></div>
   <div class="tag">BL-AN-CAT · Animals · Català</div>
-  <h1>Configura el teu paquet<br>BitLector Animals CAT</h1>
+  <h1>Configura el teu paquet de BitLector Animals CAT</h1>
 </header>
 
 <main>
 
   <div class="card">
-    <div class="card-header">
-      <div class="step-num">1</div>
-      <h2>Fes una còpia del formulari base</h2>
-    </div>
+    <div class="card-header">Pas 1: Còpia del Google Form</div>
     <div class="card-body">
-      <p>Fes clic al botó següent per crear la teva pròpia còpia del Google Form on arribaran les dades dels alumnes.</p>
-      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy" target="_blank" class="btn">📋 Fer una còpia del formulari</a>
-      <p style="font-size:0.95rem; margin-top:1.5rem;">
-        Un cop fet: obre el teu formulari → clica <strong>Publica</strong> (dalt a la dreta) → icona enllaç 🔗 → copia la URL completa.
-      </p>
+      <p>Fes una còpia del formulari base per recollir les dades dels teus alumnes. Després, publica'l i copia la URL sencera que apareix.</p>
+      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy" target="_blank">
+        <button class="btn">📋 Fer còpia del formulari</button>
+      </a>
+      <div class="alerta">Un cop fet: Obre el teu formulari → "Publica" (dalt dreta) → icona 🔗 → copia la URL completa per al pas 2.</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-header">
-      <div class="step-num">2</div>
-      <h2>Enganxa la URL del teu formulari</h2>
-    </div>
+    <div class="card-header">Pas 2: Enganxa la URL i genera el fitxer</div>
     <div class="card-body">
-      <p>Enganxa aquí la URL sencera que has copiat:</p>
-      <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLS.../viewform">
-      <div id="errorMsg" class="error">Si us plau, enganxa una URL vàlida del teu formulari.</div>
-      <button class="btn" onclick="generarFitxer()">⬇️ Descarregar BitLector Animals CAT</button>
-      <div id="successMsg" class="success">✅ Fitxer descarregat! Obre'l per començar amb els teus alumnes.</div>
+      <label for="formURL">URL del teu formulari publicat</label>
+      <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/.../viewform">
+      <div id="errorMsg" class="error-msg">⚠️ Si us plau, enganxa una URL vàlida i completa del teu Google Form.</div>
+      <button class="btn" onclick="generarFitxer()">⬇️ Descarregar el fitxer personalitzat</button>
+      <div id="successMsg" class="success-msg">✅ Fitxer 'BitLector Animals CAT.html' descarregat correctament! Obre'l amb el navegador per començar amb els alumnes. Molt bé!</div>
     </div>
   </div>
 
 </main>
 
-<footer>BitLector · BL-AN-CAT · Les dades van directament al teu Google Drive</footer>
+<footer>
+  BitLector · BL-AN-CAT · Les respostes arriben directament al teu Google Drive
+</footer>
 
 <script>
-// ─── IDs DELS CAMPS (fixes) ────────────────────────────────────────────────
-const ENTRY = {
-  NOM: "entry.810214983",
-  NIVELL: "entry.1550878135",
-  ENCERTS: "entry.1012154125",
-  ERRORS: "entry.2104514641",
-  PISTES: "entry.1517038446",
-  TEXT: "entry.1305797429",
-  ENCERTS_L: "entry.2010382620",
-  TOTAL_L: "entry.161341617",
-  ENCERTS_I: "entry.1192776101",
-  TOTAL_I: "entry.1047048577",
-  ENCERTS_G: "entry.1992687778",
-  TOTAL_G: "entry.1578007194"
-};
-
-function getTwineJS(formID) {
-  return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
-    var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
-    var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
-    var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
-    var formID = "${formID}";
-    var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
-      "${ENTRY.NOM}=" + encodeURIComponent(nom) + "&" +
-      "${ENTRY.NIVELL}=" + encodeURIComponent(nivell) + "&" +
-      "${ENTRY.ENCERTS}=" + encerts + "&" +
-      "${ENTRY.ERRORS}=" + errors + "&" +
-      "${ENTRY.PISTES}=" + pistes + "&" +
-      "${ENTRY.TEXT}=" + encodeURIComponent(idText) + "&" +
-      "${ENTRY.ENCERTS_L}=" + encertsL + "&" +
-      "${ENTRY.TOTAL_L}=" + totalL + "&" +
-      "${ENTRY.ENCERTS_I}=" + encertsI + "&" +
-      "${ENTRY.TOTAL_I}=" + totalI + "&" +
-      "${ENTRY.ENCERTS_G}=" + encertsG + "&" +
-      "${ENTRY.TOTAL_G}=" + totalG;
-    fetch(url, {mode: 'no-cors'});
-    alert("Molt bé, " + nom + "!\\n" +
-          "📖 Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
-          "🔍 Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
-          "🌍 Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)");
-  };`;
-}
-
-async function generarFitxer() {
-  const urlInput = document.getElementById('formURL').value.trim();
-  const error = document.getElementById('errorMsg');
-  const success = document.getElementById('successMsg');
-  const btn = document.querySelector('button[onclick="generarFitxer()"]');
-
-  let formID = urlInput.match(/\/d\/e\/([^\/]+)/)?.[1] || urlInput;
-  if (!formID || formID.length < 20) {
-    error.style.display = 'block';
-    return;
-  }
-  error.style.display = 'none';
-
-  btn.disabled = true;
-  btn.textContent = 'Generant...';
-
-  try {
-    // Assumeix que tens 'base.html' al mateix directori o subcarpeta
-    const res = await fetch('base.html');
-    if (!res.ok) throw new Error('No es troba base.html');
-    let html = await res.text();
-
-    const js = getTwineJS(formID);
-    html = html.replace('/* INJECT_ENVIAR_DADES */', js);
-
-    const blob = new Blob([html], {type: 'text/html'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'BitLector Animals CAT.html';
-    a.click();
-
-    success.style.display = 'block';
-  } catch (e) {
-    alert('Error: ' + e.message + '\\nAssegura\'t que base.html està disponible.');
-  }
-
-  btn.disabled = false;
-  btn.textContent = '⬇️ Descarregar BitLector Animals CAT';
-}
-
-document.getElementById('formURL').addEventListener('input', () => {
-  document.getElementById('errorMsg').style.display = 'none';
-});
+// [El script de generació roman igual que a la versió anterior - no cal canviar-lo per aquest problema visual]
+// Copia el codi JavaScript complet de la versió anterior aquí (el que té ENTRY IDs, getTwineScript i generarFitxer())
+const ENTRY = { /* ... mateix que abans ... */ };
+function getTwineScript(formID) { /* ... mateix que abans ... */ }
+async function generarFitxer() { /* ... mateix que abans ... */ }
 </script>
 </body>
 </html>

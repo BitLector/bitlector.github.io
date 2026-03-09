@@ -1912,7 +1912,7 @@ Finalmente, hay que reflexionar sobre nuestra responsabilidad hacia los felinos 
 (set: $totalG to 0)
 }
 
-###🐾 Benvingut/da a BitLector — Paquete Animales
+###🐾 ¡Bienvenido/a a BitLector — Paquete Animales!
 <img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/inici.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
 
 Elige el texto que quieres trabajar:
@@ -3182,6 +3182,11 @@ En las aguas cálidas es donde nacen los **ballenatos**. Las madres cuidan muy b
 (set: $totalL to it + 1)
 **Pregunta 8 (L): ¿Adónde van las ballenas en verano a buscar alimento?**
 
+* (link: &quot;b) A las aguas tropicales del Ecuador.&quot;)[ 
+    (set: $errors to it + 1)(set: $intentFallit to true)
+    (alert: &quot;Las aguas cálidas son para tener las crías, no para buscar alimento en verano. ¿Qué dice el texto sobre el verano y la Antártida?&quot;)
+]
+
 * (link: &quot;a) A la Antártida.&quot;)[ 
     (if: not $intentFallit)[(set: $encerts to it + 1)(set: $encertsL to it + 1)]
     (set: $intentFallit to false)
@@ -3337,7 +3342,7 @@ Son criaturas extremadamente sociales que viven en comunidades organizadas. Esto
                     (set: $intentFallit to false)
                     (go-to: &quot;T3-N2-P2&quot;)
                 ]
-                * (link: &quot;b) Describir exactamente cómo funcionan las vainas de cetáceos.&quot;)[
+                * (link: &quot;b) Comparar las diferencias entre los cetáceos con dientes y con barbas.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
                     (alert: &quot;El texto habla de sociedad y rasgos físicos, no de 'vainas' como herramienta.&quot;)
                 ]
@@ -3637,7 +3642,7 @@ A pesar de los retos, hay motivos para el optimismo. Gracias a las reservas mari
 🐋 **¡Excelente trabajo, Cetáceo!** Has demostrado una gran comprensión del mundo de los cetáceos, desde sus barbas de queratina hasta las complejas migraciones oceánicas. Tu lectura analítica es admirable. ¡Adelante! 🌊
 ]
 (if: $nivell is "N3")[
-🌌 **¡Impresionante, Abisal!** Has navegado con precisión por conceptos como la *ecolocalización*, el *panículo adiposo* o la *polinización entomófila*, demostrando una capacidad crítica y científica excepcional. ¡El océano profundo no tiene secretos para ti! 🔬
+🌌 **¡Impresionante, Abisal!** Has navegado con precisión por conceptos como la *ecolocalización*, el *panículo adiposo* o la *degradación del hábitat marino*, demostrando una capacidad crítica y científica excepcional. ¡El océano profundo no tiene secretos para ti! 🔬
 ]
 
 ---
@@ -4439,7 +4444,7 @@ Cuando los jóvenes osos alcanzan la madurez suficiente, abandonan a la madre pa
 ---
 
 (if: $nivell is "N1")[
-🌲 **¡Muy bien, Explorador!** ¡Has aprendido muchas cosas sobre los osos! 🐻 Ahora ya sabes que duermen en invierno y que sus crías se llaman oseznas. ¡Sigue explorando el bosque de los textos! 🍯
+🌲 **¡Muy bien, Explorador!** ¡Has aprendido muchas cosas sobre los osos! 🐻 Ahora ya sabes que duermen en invierno y que sus crías se llaman oseznos. ¡Sigue explorando el bosque de los textos! 🍯
 ]
 (if: $nivell is "N2")[
 🐻 **¡Excelente trabajo, Plantígrado!** Has demostrado una gran comprensión de la anatomía, la dieta y el ciclo vital de los osos. Tu capacidad para relacionar ideas del texto es admirable. ¡Sigue adelante! 🌲
@@ -5792,9 +5797,9 @@ En conclusión, el destino de las águilas está estrechamente ligado a nuestra 
 </tw-passagedata><tw-passagedata pid="95" name="T2P4" tags="" position="700,500" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="96" name="T2P5" tags="" position="800,500" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P5.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="97" name="T3P1" tags="" position="1100,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="98" name="T3P2" tags="" position="1200,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="99" name="T3P3" tags="" position="1300,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="100" name="T3P4" tags="" position="1400,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P3.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="98" name="T3P2" tags="" position="1200,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P2.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="99" name="T3P3" tags="" position="1300,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P3.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="100" name="T3P4" tags="" position="1400,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="101" name="T3P5" tags="" position="1500,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P5.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="102" name="T4P1" tags="" position="1800,0" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="103" name="T4P2" tags="" position="1900,0" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P2.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;

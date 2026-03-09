@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitLector — BL-AN-ES [Animales-ES]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #2A1810;
+      --paper: #FDF6EE;
+      --accent: #E05C3A;     /* Coral principal */
+      --accent-dark: #8B2A14; /* Terracota */
+      --accent-light: #F0957A;
+      --muted: #6B5E4F;
+      --border: #E8D9C5;
+      --gold: #d4a373;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem 2.5rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #fff, var(--paper));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-container {
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--ink);
+    }
+
+    .logo-bookmark {
+      width: 80px;
+      height: 100px;
+      background: var(--accent);
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .logo-bookmark::after {
+      content: '≡';
+      position: absolute;
+      bottom: 20px;
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .paquet-tag {
+      display: inline-block;
+      background: var(--accent-dark);
+      color: white;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .flux {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .flux-step {
+      text-align: center;
+    }
+
+    .flux-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flux-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(139,42,20,0.08);
+    }
+
+    .card-header {
+      background: var(--ink);
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .instruction {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .instruction strong {
+      color: var(--ink);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      background: var(--paper);
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 1.2rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .error-msg, .success-msg {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .error-msg { background: #ffebee; color: #c62828; }
+    .success-msg { background: #e8f5e9; color: #2e7d32; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <div class="logo">
+      <div class="logo-bookmark">Bit</div>
+      <span>LECTOR</span>
+    </div>
+  </div>
+  <div class="paquet-tag">BL-AN-ES · Animales · Español</div>
+  <h1>BitLector <em>Animales</em></h1>
+  <p class="subtitle">En dos minutos tendrás tu versión personalizada con conexión directa a tu formulario de Google.</p>
+</header>
+
+<main>
+  <!-- Flux visual -->
+  <div class="flux">
+    <div class="flux-step">
+      <div class="flux-icon">⚙️</div>
+      <div class="flux-label">Configura</div>
+    </div>
+    <div class="flux-step">
+      <div class="flux-icon">→</div>
+    </div>
+    <div class="flux-step">
+      <div class="flux-icon">📥</div>
+      <div class="flux-label">Descarga</div>
+    </div>
+    <div class="flux-step">
+      <div class="flux-icon">→</div>
+    </div>
+    <div class="flux-step">
+      <div class="flux-icon">👩‍🎓</div>
+      <div class="flux-label">Comparte</div>
+    </div>
+  </div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">1</div>
+      <h2>Haz una copia del formulario base</h2>
+    </div>
+    <div class="card-body">
+      <p class="instruction">
+        Haz clic para crear tu propio Google Form donde llegarán las respuestas. Confirma con <strong>"Hacer una copia"</strong>.
+      </p>
+      <a href="https://docs.google.com/forms/d/1n60_TbZQvYr2HQgFC2bODIkzWklVDDQg6MShoSZlr0A/copy" target="_blank" style="text-decoration:none; display:block;">
+        <button class="btn-primary">📋 Hacer copia del formulario</button>
+      </a>
+      <p class="instruction" style="margin-top:1.5rem;">
+        Después, ve a <strong>"Enviar"</strong> → icono de enlace → copia la URL completa (termina en /viewform).
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="step-num">2</div>
+      <h2>Pega la URL y descarga</h2>
+    </div>
+    <div class="card-body">
+      <p class="instruction">Pega aquí la URL completa de tu formulario:</p>
+      <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLSc.../viewform">
+      <div id="errorMsg" class="error-msg" style="display:none;">URL inválida. Debe terminar en /viewform.</div>
+      <button class="btn-primary" id="btnDownload" onclick="generarHTML()">⬇️ Descargar versión personalizada</button>
+      <div id="successMsg" class="success-msg" style="display:none;">
+        ¡Descargado! <strong>BitLector Animales ES.html</strong><br>
+        Uso personal – compártelo solo con tus alumnos.
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  BitLector · BL-AN-ES [Animales-ES] · 2026 · Uso personal e intransferible
+</footer>
+
+<script>
+// ENTRY IDs (sense canvis – compatibles amb el teu nou formulari)
+const ENTRY_NOM      = "entry.810214983";
+const ENTRY_NIVELL   = "entry.1550878135";
+const ENTRY_ENCERTS  = "entry.1012154125";
+const ENTRY_ERRORS   = "entry.2104514641";
+const ENTRY_PISTES   = "entry.1517038446";
+const ENTRY_TEXT     = "entry.1305797429";
+const ENTRY_ENCERTS_L = "entry.2010382620";
+const ENTRY_TOTAL_L   = "entry.161341617";
+const ENTRY_ENCERTS_I = "entry.1192776101";
+const ENTRY_TOTAL_I   = "entry.1047048577";
+const ENTRY_ENCERTS_G = "entry.1992687778";
+const ENTRY_TOTAL_G   = "entry.1578007194";
+
+function getJavascriptTwine(formID) {
+  return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
+    var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
+    var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
+    var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
+    var formID = "${formID}";
+    var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
+      "${ENTRY_NOM}=" + encodeURIComponent(nom) + "&" +
+      "${ENTRY_NIVELL}=" + encodeURIComponent(nivell) + "&" +
+      "${ENTRY_ENCERTS}=" + encerts + "&" +
+      "${ENTRY_ERRORS}=" + errors + "&" +
+      "${ENTRY_PISTES}=" + pistes + "&" +
+      "${ENTRY_TEXT}=" + encodeURIComponent(idText) + "&" +
+      "${ENTRY_ENCERTS_L}=" + encertsL + "&" +
+      "${ENTRY_TOTAL_L}=" + totalL + "&" +
+      "${ENTRY_ENCERTS_I}=" + encertsI + "&" +
+      "${ENTRY_TOTAL_I}=" + totalI + "&" +
+      "${ENTRY_ENCERTS_G}=" + encertsG + "&" +
+      "${ENTRY_TOTAL_G}=" + totalG;
+    fetch(url, {mode: 'no-cors'});
+    alert("¡Muy bien, " + nom + "!\\nLiterales: " + encertsL + "/" + totalL + " (" + pctL + "%)\\nInferenciales: " + encertsI + "/" + totalI + " (" + pctI + "%)\\nGlobales: " + encertsG + "/" + totalG + " (" + pctG + "%)");
+  };`;
+}
+
+async function generarHTML() {
+  const urlInput = document.getElementById('formURL').value.trim();
+  const errorEl = document.getElementById('errorMsg');
+  const successEl = document.getElementById('successMsg');
+  const btn = document.getElementById('btnDownload');
+
+  let formID = urlInput.match(/\/e\/([^\/]+)/)?.[1] || '';
+  if (!formID) formID = urlInput; // fallback si només posen l'ID
+
+  if (formID.length < 20) {
+    errorEl.style.display = 'block';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Generando...';
+
+  try {
+    const res = await fetch('base.html');
+    if (!res.ok) throw new Error('No s\'ha pogut carregar base.html');
+    let html = await res.text();
+
+    html = html.replace('/* INJECT_ENVIAR_DADES */', getJavascriptTwine(formID));
+
+    const blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+    const link = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = link;
+    a.download = 'BitLector Animales ES.html';
+    a.click();
+    URL.revokeObjectURL(link);
+
+    successEl.style.display = 'block';
+  } catch (e) {
+    alert('Error: ' + e.message);
+  }
+
+  btn.disabled = false;
+  btn.textContent = '⬇️ Descargar versión personalizada';
+}
+</script>
+</body>
+</html>

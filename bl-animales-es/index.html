@@ -308,7 +308,7 @@ async function generarHTML() {
   const btn = document.getElementById('btnDownload');
 
   let formID = urlInput.match(/\/forms\/d\/e\/([^\/\?]+)/)?.[1] || urlInput;
-  if (formID.length < 20) {
+  if (!formID || formID.length < 20) {
     errorEl.style.display = 'block';
     return;
   }
@@ -329,7 +329,9 @@ async function generarHTML() {
     const a = document.createElement('a');
     a.href = link;
     a.download = 'BitLector Animales ES.html';
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(link);
 
     successEl.style.display = 'block';

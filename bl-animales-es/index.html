@@ -11,12 +11,11 @@
     :root {
       --ink: #2A1810;
       --paper: #FDF6EE;
-      --accent: #E05C3A;     /* Coral principal */
-      --accent-dark: #8B2A14; /* Terracota */
+      --accent: #E05C3A;
+      --accent-dark: #8B2A14;
       --accent-light: #F0957A;
       --muted: #6B5E4F;
       --border: #E8D9C5;
-      --gold: #d4a373;
     }
 
     body {
@@ -28,80 +27,42 @@
     }
 
     header {
-      position: relative;
-      z-index: 1;
-      padding: 4rem 2rem 2.5rem;
       text-align: center;
-      background: linear-gradient(to bottom, #fff, var(--paper));
+      padding: 3.5rem 1.5rem 2.5rem;
+      background: linear-gradient(to bottom, white, var(--paper));
       border-bottom: 1px solid var(--border);
     }
 
-    .logo-container {
-      margin-bottom: 2rem;
+    .logo-img {
+      max-width: 320px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      color: var(--accent);
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: var(--ink);
-    }
-
-    .logo-bookmark {
-      width: 80px;
-      height: 100px;
-      background: var(--accent);
-      clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .logo-bookmark::after {
-      content: '≡';
-      position: absolute;
-      bottom: 20px;
-      font-size: 2.2rem;
-      line-height: 1;
-    }
-
-    .paquet-tag {
-      display: inline-block;
+    .tag {
       background: var(--accent-dark);
       color: white;
       font-family: 'Space Mono', monospace;
-      font-size: 1rem;
-      padding: 0.5rem 1.2rem;
-      border-radius: 6px;
+      font-size: 1.1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
       margin: 1rem 0;
+      display: inline-block;
     }
 
     h1 {
-      font-family: 'Nunito', sans-serif;
       font-weight: 900;
       font-size: clamp(2.5rem, 6vw, 4rem);
       margin-bottom: 1rem;
     }
 
-    h1 em {
-      color: var(--accent);
-      font-style: normal;
-    }
+    h1 em { color: var(--accent); font-style: normal; }
 
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--muted);
       max-width: 600px;
       margin: 0 auto;
@@ -110,15 +71,15 @@
     main {
       max-width: 700px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 5rem;
+      padding: 2rem 1.5rem 4rem;
     }
 
     .flux {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
-      margin: 3rem 0;
+      gap: 1.2rem;
+      margin: 2.5rem 0;
       flex-wrap: wrap;
     }
 
@@ -127,13 +88,13 @@
     }
 
     .flux-icon {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.6rem;
     }
 
     .flux-label {
       font-family: 'Space Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
@@ -154,12 +115,12 @@
       padding: 1.5rem 2rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .step-num {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       background: var(--accent);
       color: white;
       border-radius: 50%;
@@ -167,7 +128,7 @@
       align-items: center;
       justify-content: center;
       font-family: 'Space Mono', monospace;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: bold;
     }
 
@@ -181,22 +142,19 @@
       margin-bottom: 1.5rem;
     }
 
-    .instruction strong {
-      color: var(--ink);
-    }
+    .instruction strong { color: var(--ink); }
 
     input[type="text"] {
       width: 100%;
-      padding: 1rem;
+      padding: 1rem 1.2rem;
       border: 2px solid var(--border);
       border-radius: 8px;
       font-family: 'Space Mono', monospace;
       font-size: 1rem;
       background: var(--paper);
-      transition: border-color 0.2s;
     }
 
-    input[type="text"]:focus {
+    input:focus {
       border-color: var(--accent);
       outline: none;
     }
@@ -208,32 +166,30 @@
       color: white;
       border: none;
       border-radius: 8px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.1rem;
       font-weight: 700;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.2s;
     }
 
-    .btn-primary:hover {
-      background: var(--accent-dark);
-    }
+    .btn-primary:hover { background: var(--accent-dark); }
 
     .error-msg, .success-msg {
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       padding: 1rem;
       border-radius: 8px;
       font-weight: 600;
+      text-align: center;
     }
 
-    .error-msg { background: #ffebee; color: #c62828; }
-    .success-msg { background: #e8f5e9; color: #2e7d32; }
+    .error-msg { background: #ffebee; color: #c62828; display: none; }
+    .success-msg { background: #e8f5e9; color: #2e7d32; display: none; }
 
     footer {
       text-align: center;
       padding: 3rem 1rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       border-top: 1px solid var(--border);
     }
   </style>
@@ -241,41 +197,31 @@
 <body>
 
 <header>
-  <div class="logo-container">
-    <div class="logo">
-      <div class="logo-bookmark">Bit</div>
-      <span>LECTOR</span>
-    </div>
-  </div>
-  <div class="paquet-tag">BL-AN-ES · Animales · Español</div>
+  <img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/marcabl/bitlector_logo_requadre_horitzontal.png" 
+       alt="BitLector Logo" class="logo-img">
+  <div class="tag">BL-AN-ES · Animales · Español</div>
   <h1>BitLector <em>Animales</em></h1>
   <p class="subtitle">En dos minutos tendrás tu versión personalizada con conexión directa a tu formulario de Google.</p>
 </header>
 
 <main>
-  <!-- Flux visual -->
   <div class="flux">
     <div class="flux-step">
       <div class="flux-icon">⚙️</div>
       <div class="flux-label">Configura</div>
     </div>
-    <div class="flux-step">
-      <div class="flux-icon">→</div>
-    </div>
+    <div class="flux-step"><div class="flux-icon">→</div></div>
     <div class="flux-step">
       <div class="flux-icon">📥</div>
       <div class="flux-label">Descarga</div>
     </div>
-    <div class="flux-step">
-      <div class="flux-icon">→</div>
-    </div>
+    <div class="flux-step"><div class="flux-icon">→</div></div>
     <div class="flux-step">
       <div class="flux-icon">👩‍🎓</div>
       <div class="flux-label">Comparte</div>
     </div>
   </div>
 
-  <!-- Card 1 -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">1</div>
@@ -294,7 +240,6 @@
     </div>
   </div>
 
-  <!-- Card 2 -->
   <div class="card">
     <div class="card-header">
       <div class="step-num">2</div>
@@ -303,9 +248,9 @@
     <div class="card-body">
       <p class="instruction">Pega aquí la URL completa de tu formulario:</p>
       <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLSc.../viewform">
-      <div id="errorMsg" class="error-msg" style="display:none;">URL inválida. Debe terminar en /viewform.</div>
+      <div id="errorMsg" class="error-msg">URL inválida. Debe terminar en /viewform.</div>
       <button class="btn-primary" id="btnDownload" onclick="generarHTML()">⬇️ Descargar versión personalizada</button>
-      <div id="successMsg" class="success-msg" style="display:none;">
+      <div id="successMsg" class="success-msg">
         ¡Descargado! <strong>BitLector Animales ES.html</strong><br>
         Uso personal – compártelo solo con tus alumnos.
       </div>
@@ -318,7 +263,7 @@
 </footer>
 
 <script>
-// ENTRY IDs (sense canvis – compatibles amb el teu nou formulari)
+// ENTRY IDs (compatibles amb el formulari nou)
 const ENTRY_NOM      = "entry.810214983";
 const ENTRY_NIVELL   = "entry.1550878135";
 const ENTRY_ENCERTS  = "entry.1012154125";
@@ -362,9 +307,7 @@ async function generarHTML() {
   const successEl = document.getElementById('successMsg');
   const btn = document.getElementById('btnDownload');
 
-  let formID = urlInput.match(/\/e\/([^\/]+)/)?.[1] || '';
-  if (!formID) formID = urlInput; // fallback si només posen l'ID
-
+  let formID = urlInput.match(/\/e\/([^\/]+)/)?.[1] || urlInput;
   if (formID.length < 20) {
     errorEl.style.display = 'block';
     return;
@@ -376,7 +319,7 @@ async function generarHTML() {
 
   try {
     const res = await fetch('base.html');
-    if (!res.ok) throw new Error('No s\'ha pogut carregar base.html');
+    if (!res.ok) throw new Error('No se pudo cargar base.html');
     let html = await res.text();
 
     html = html.replace('/* INJECT_ENVIAR_DADES */', getJavascriptTwine(formID));
@@ -391,7 +334,7 @@ async function generarHTML() {
 
     successEl.style.display = 'block';
   } catch (e) {
-    alert('Error: ' + e.message);
+    alert('Error: ' + e.message + '\nAsegúrate de que base.html está en la carpeta.');
   }
 
   btn.disabled = false;

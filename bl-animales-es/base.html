@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>BL-Animals-ESP</title>
+<title>BL-Animales-ESP</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play BL-Animals-ESP.</tw-noscript></noscript></tw-story>
-<tw-storydata name="BL-Animals-ESP" startnode="18" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="ad33e92e-8a1c-4954-bb0a-1179f07c9c58" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ============================================================
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play BL-Animales-ESP.</tw-noscript></noscript></tw-story>
+<tw-storydata name="BL-Animales-ESP" startnode="18" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="ad33e92e-8a1c-4954-bb0a-1179f07c9c58" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ============================================================
    BITLECTOR — PLANTILLA CSS COMPLETA PER A TWINE HARLOWE 3.3.9
    Versio 2.5 — Paquete Animales (selector h1 Harlowe + T0 millorat)
    ============================================================
@@ -806,12 +806,12 @@ tw-story[tags~="T5"] h3 { font-size: 1.1em; }
    Si no vols fons, elimina les línies url('[URL_FONS_TX]')
    ============================================================ */</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* INJECT_ENVIAR_DADES */</script><tw-tag name="T1" color="green"></tw-tag><tw-tag name="T2" color="orange"></tw-tag><tw-tag name="T3" color="blue"></tw-tag><tw-tag name="T4" color="red"></tw-tag><tw-tag name="T5" color="purple"></tw-tag><tw-tag name="T0" color="yellow"></tw-tag><tw-passagedata pid="1" name="Inici-T1" tags="T1" position="300,200" size="100,100">
 {
-(set: $nom to "")
-(set: $nivell to "")
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "T1")
+(set: $id_text to &quot;T1&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -822,17 +822,17 @@ tw-story[tags~="T5"] h3 { font-size: 1.1em; }
 
 # 🐱 Los felinos — Grandes cazadores del mundo
 
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T1-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T1-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Escribe tu nombre antes de empezar:
 
-(input-box: bind $nom, "")
+(input-box: bind $nom, &quot;&quot;)
 
 Una vez hayas escrito tu nombre, elige tu nivel:
 
-(link: "🐾 Gato — Nivel 1")[(set: $nivell to "N1")(go-to: "T1-N1-P1")]
-(link: "🐆 Leopardo — Nivel 2")[(set: $nivell to "N2")(go-to: "T1-N2-P1")]
-(link: "🦁 León — Nivel 3")[(set: $nivell to "N3")(go-to: "T1-N3-P1")]</tw-passagedata><tw-passagedata pid="2" name="T1-N1-P1" tags="T1" position="400,100" size="100,100"># 🐱 Capítulo 1: ¿Qué es un felino?
+(link: &quot;🐾 Gato — Nivel 1&quot;)[(set: $nivell to &quot;N1&quot;)(go-to: &quot;T1-N1-P1&quot;)]
+(link: &quot;🐆 Leopardo — Nivel 2&quot;)[(set: $nivell to &quot;N2&quot;)(go-to: &quot;T1-N2-P1&quot;)]
+(link: &quot;🦁 León — Nivel 3&quot;)[(set: $nivell to &quot;N3&quot;)(go-to: &quot;T1-N3-P1&quot;)]</tw-passagedata><tw-passagedata pid="2" name="T1-N1-P1" tags="T1" position="400,100" size="100,100"># 🐱 Capítulo 1: ¿Qué es un felino?
 
 Los **felinos** son una familia de mamíferos **muy especiales**. Son animales **carnívoros**, lo que significa que solo comen carne. Tienen un cuerpo muy **ágil** y unas garras que pueden **esconder** y sacar cuando quieren. Esto les ayuda a **cazar** en silencio.
 
@@ -975,7 +975,7 @@ Además de los sentidos, el aparato locomotor de los felinos es fascinante por s
 
 * (link: &quot;a) Que sus garras crecen muy rápidamente cada mes.&quot;)[ 
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto define claramente qué quiere decir 'digitígrado' en el tercer párrafo.&quot;)
+    (alert: &quot;El texto define claramente qué quiere decir &#39;digitígrado&#39; en el tercer párrafo.&quot;)
 ]
 
 * (link: &quot;b) Que tiene la capacidad de contar con los dedos de las patas.&quot;)[ 
@@ -1068,7 +1068,7 @@ Estos animales pueden hacer un **rugido muy fuerte**. El rugido se puede escucha
 
         * (link: &quot;b) Para avisar que tienen hambre.&quot;)[ 
             (set: $errors to it + 1)(set: $intentFallit to true)
-            (alert: &quot;El texto explica exactamente para qué usan el rugido. Busca la palabra 'territorio'.&quot;)
+            (alert: &quot;El texto explica exactamente para qué usan el rugido. Busca la palabra &#39;territorio&#39;.&quot;)
         ]
     ]}
 ]
@@ -1492,7 +1492,7 @@ Su piel tiene **manchas negras** y unas líneas en la cara que parecen **lágrim
 
 ---
 
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca las explicaciones que dicen 'para no resbalar' y 'para proteger los ojos'.]</tw-passagedata><tw-passagedata pid="12" name="T1-N2-P4" tags="T1" position="700,200" size="100,100"># 🐆 Capítulo 4: Adaptaciones para la velocidad extrema
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca las explicaciones que dicen &#39;para no resbalar&#39; y &#39;para proteger los ojos&#39;.]</tw-passagedata><tw-passagedata pid="12" name="T1-N2-P4" tags="T1" position="700,200" size="100,100"># 🐆 Capítulo 4: Adaptaciones para la velocidad extrema
 
 El guepardo representa el éxito de la evolución en cuanto a la velocidad punta. Su cuerpo es aerodinámico, con una columna vertebral extremadamente flexible que actúa como un muelle durante la carrera. Esto le permite hacer zancadas de hasta siete metros. Tiene unos pulmones y unas fosas nasales muy grandes para absorber el oxígeno necesario rápidamente.
 
@@ -1860,7 +1860,7 @@ Finalmente, hay que reflexionar sobre nuestra responsabilidad hacia los felinos 
 ---
 
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Recuerda la función de los gatos en Egipto, el efecto de su posible desaparición y cómo se comunican los gatos domésticos actualmente.]</tw-passagedata><tw-passagedata pid="17" name="Final-T1" tags="T1" position="900,200" size="100,100"># 🏁 ¡Has terminado el texto 1 — Los felinos!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T1-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T1-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 ---
 
 **Nombre:** $nom
@@ -1880,30 +1880,30 @@ Finalmente, hay que reflexionar sobre nuestra responsabilidad hacia los felinos 
 
 ---
 
-(if: $nivell is "N1")[
+(if: $nivell is &quot;N1&quot;)[
 🐾 **¡Muy bien, Cachorro!** ¡Has aprendido muchas cosas sobre los felinos! 🎉 Ahora ya sabes por qué los gatos esconden sus garras. ¡Sigue explorando el mundo animal! 🐱
 ]
-(if: $nivell is "N2")[
+(if: $nivell is &quot;N2&quot;)[
 🐆 **¡Excelente trabajo, Leopardo!** Has demostrado una gran capacidad lectora analizando las adaptaciones y comportamientos de los felinos. Tu habilidad para conectar ideas del texto es admirable. ¡Sigue así! 🌿
 ]
-(if: $nivell is "N3")[
+(if: $nivell is &quot;N3&quot;)[
 🦁 **¡Impresionante, León!** Has trabajado con vocabulario científico complejo — *tapetum lucidum*, *digitígrado*, *disrupción visual* — con una precisión analítica excepcional. Tu capacidad de interpretación crítica es propia de un gran lector. 🏆
 ]
 
 ---
 
-|enviament>[(link: "💾 Enviar datos a la Base Central")[
-    (print: "<script>window.enviarDadesGoogle('" + $nom + "', '" + $nivell + "', " + (str: $encerts) + ", " + (str: $errors) + ", " + (str: $pistes) + ", '" + $id_text + "', " + (str: $encertsL) + ", " + (str: $encertsI) + ", " + (str: $encertsG) + ", " + (str: $totalL) + ", " + (str: $totalI) + ", " + (str: $totalG) + ")</script>")
+|enviament&gt;[(link: &quot;💾 Enviar datos a la Base Central&quot;)[
+    (print: &quot;window.enviarDadesGoogle(&#39;&quot; + $nom + &quot;&#39;, &#39;&quot; + $nivell + &quot;&#39;, &quot; + (str: $encerts) + &quot;, &quot; + (str: $errors) + &quot;, &quot; + (str: $pistes) + &quot;, &#39;&quot; + $id_text + &quot;&#39;, &quot; + (str: $encertsL) + &quot;, &quot; + (str: $encertsI) + &quot;, &quot; + (str: $encertsG) + &quot;, &quot; + (str: $totalL) + &quot;, &quot; + (str: $totalI) + &quot;, &quot; + (str: $totalG) + &quot;)&quot;)
     (replace: ?enviament)[**✅ Dades guardades correctament. Gràcies per participar, $nom!**]
 ]]
 
-(link: "🏠 Volver al inicio")[(go-to: "Inici")]</tw-passagedata><tw-passagedata pid="18" name="Inici" tags="T0" position="100,400" size="100,100">{
-(set: $nom to "")
-(set: $nivell to "")
+(link: &quot;🏠 Volver al inicio&quot;)[(go-to: &quot;Inici&quot;)]</tw-passagedata><tw-passagedata pid="18" name="Inici" tags="T0" position="100,400" size="100,100">{
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "")
+(set: $id_text to &quot;&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -1912,16 +1912,16 @@ Finalmente, hay que reflexionar sobre nuestra responsabilidad hacia los felinos 
 (set: $totalG to 0)
 }
 
-###🐾 ¡Bienvenido/a a BitLector — Paquete Animales!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/inici.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+###🐾 Benvingut/da a BitLector — Paquete Animales
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/inici.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Elige el texto que quieres trabajar:
 
-(link: "🐱 Texto 1 — Los felinos")[(set: $id_text to "T1")(go-to: "Inici-T1")]
-(link: "🐝 Texto 2 — Las abejas")[(set: $id_text to "T2")(go-to: "Inici-T2")]
-(link: "🐋 Texto 3 — Las ballenas")[(set: $id_text to "T3")(go-to: "Inici-T3")]
-(link: "🐻 Texto 4 — Los osos")[(set: $id_text to "T4")(go-to: "Inici-T4")]
-(link: "🦅 Texto 5 — Las águilas")[(set: $id_text to "T5")(go-to: "Inici-T5")]</tw-passagedata><tw-passagedata pid="19" name="T2-N1-P1" tags="T2" position="400,600" size="100,100"># 🐝 Capítulo 1: ¿Quiénes son las abejas?
+(link: &quot;🐱 Texto 1 — Los felinos&quot;)[(set: $id_text to &quot;T1&quot;)(go-to: &quot;Inici-T1&quot;)]
+(link: &quot;🐝 Texto 2 — Las abejas&quot;)[(set: $id_text to &quot;T2&quot;)(go-to: &quot;Inici-T2&quot;)]
+(link: &quot;🐋 Texto 3 — Las ballenas&quot;)[(set: $id_text to &quot;T3&quot;)(go-to: &quot;Inici-T3&quot;)]
+(link: &quot;🐻 Texto 4 — Los osos&quot;)[(set: $id_text to &quot;T4&quot;)(go-to: &quot;Inici-T4&quot;)]
+(link: &quot;🦅 Texto 5 — Las águilas&quot;)[(set: $id_text to &quot;T5&quot;)(go-to: &quot;Inici-T5&quot;)]</tw-passagedata><tw-passagedata pid="19" name="T2-N1-P1" tags="T2" position="400,600" size="100,100"># 🐝 Capítulo 1: ¿Quiénes son las abejas?
 
 Las **abejas** son insectos muy pequeños y trabajadores que viven en comunidad. Tienen el cuerpo lleno de **pelos** y unas rayas de color **amarillo y negro** que las hacen fáciles de ver. Estos insectos son muy importantes para la naturaleza porque ayudan a las flores.
 
@@ -2241,7 +2241,7 @@ Los **zánganos** son los machos de la colonia y su única función es la reprod
 
         * (link: &quot;c) Que solo comen miel y néctar.&quot;)[ 
             (set: $errors to it + 1)(set: $intentFallit to true)
-            (alert: &quot;La dieta no tiene relación con el término 'estériles' que usa el texto.&quot;)
+            (alert: &quot;La dieta no tiene relación con el término &#39;estériles&#39; que usa el texto.&quot;)
         ]
     ]}
 ]
@@ -2447,7 +2447,7 @@ Lamentablemente, las poblaciones de abejas están disminuyendo debido al uso de 
 
         * (link: &quot;b) Porque el polen no cuesta dinero a las plantas.&quot;)[ 
             (set: $errors to it + 1)(set: $intentFallit to true)
-            (alert: &quot;El término 'gratuito' se refiere al aspecto humano y tecnológico.&quot;)
+            (alert: &quot;El término &#39;gratuito&#39; se refiere al aspecto humano y tecnológico.&quot;)
         ]
 
         * (link: &quot;c) Porque es un beneficio natural que no requiere tecnología humana.&quot;)[ 
@@ -2479,7 +2479,7 @@ Lamentablemente, las poblaciones de abejas están disminuyendo debido al uso de 
 
 * (link: &quot;c) La mitad exacta.&quot;)[ 
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto dice 'un tercio', no la mitad.&quot;)
+    (alert: &quot;El texto dice &#39;un tercio&#39;, no la mitad.&quot;)
 ]
 
 ]
@@ -2487,7 +2487,7 @@ Lamentablemente, las poblaciones de abejas están disminuyendo debido al uso de 
 
 ---
 
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Repasa la proporción que indica el texto, el significado de 'gratuito' y el tono general cuando habla de pesticidas y desaparición.]</tw-passagedata><tw-passagedata pid="28" name="T2-N2-P5" tags="T2" position="800,700" size="100,100"># 🕺 Capítulo 5: Lenguaje y orientación
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Repasa la proporción que indica el texto, el significado de &#39;gratuito&#39; y el tono general cuando habla de pesticidas y desaparición.]</tw-passagedata><tw-passagedata pid="28" name="T2-N2-P5" tags="T2" position="800,700" size="100,100"># 🕺 Capítulo 5: Lenguaje y orientación
 
 La comunicación entre las abejas es una de las más complejas del reino animal, utilizando lo que los científicos llaman la **danza de la abeja**. Mediante movimientos precisos en forma de ocho y vibraciones del abdomen, una exploradora puede indicar a sus compañeras la distancia y la dirección exacta de una fuente de néctar respecto a la posición del sol.
 
@@ -2596,7 +2596,7 @@ Los **zánganos** completan este triángulo social, aunque su existencia es temp
 
         * (link: &quot;b) Que la reina es la única que tiene derechos dentro de la colmena.&quot;)[ 
             (set: $errors to it + 1)(set: $intentFallit to true)
-            (alert: &quot;No se habla de 'derechos', sino de prioridad del bienestar colectivo sobre el individual.&quot;)
+            (alert: &quot;No se habla de &#39;derechos&#39;, sino de prioridad del bienestar colectivo sobre el individual.&quot;)
         ]
 
         * (link: &quot;c) Que cada abeja trabaja priorizando el bienestar de toda la colonia.&quot;)[ 
@@ -2633,7 +2633,7 @@ Los **zánganos** completan este triángulo social, aunque su existencia es temp
 
 * (link: &quot;c) Más de 10.000 huevos.&quot;)[ 
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto dice exactamente 'hasta 2.000'.&quot;)
+    (alert: &quot;El texto dice exactamente &#39;hasta 2.000&#39;.&quot;)
 ]
 
 ]
@@ -2822,7 +2822,7 @@ La protección de estos insectos es una prioridad para la conservación del medi
 
         * (link: &quot;a) A lugares donde hay mucha arena y pocas plantas.&quot;)[ 
             (set: $errors to it + 1)(set: $intentFallit to true)
-            (alert: &quot;El término 'desiertos verdes' se refiere a campos cultivados, no a desiertos reales.&quot;)
+            (alert: &quot;El término &#39;desiertos verdes&#39; se refiere a campos cultivados, no a desiertos reales.&quot;)
         ]
 
         * (link: &quot;b) A grandes extensiones de cultivos de un solo tipo sin flores diversas.&quot;)[ 
@@ -2872,7 +2872,7 @@ La protección de estos insectos es una prioridad para la conservación del medi
 
 ---
 
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca qué permite la polinización a las plantas, el significado de 'desiertos verdes' y la idea final sobre la importancia de las abejas.]</tw-passagedata><tw-passagedata pid="33" name="T2-N3-P5" tags="T2" position="800,800" size="100,100"># 🧠 Capítulo 5: Inteligencia colectiva
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca qué permite la polinización a las plantas, el significado de &#39;desiertos verdes&#39; y la idea final sobre la importancia de las abejas.]</tw-passagedata><tw-passagedata pid="33" name="T2-N3-P5" tags="T2" position="800,800" size="100,100"># 🧠 Capítulo 5: Inteligencia colectiva
 
 El estudio de la comunicación en las abejas ha revelado una sofisticación inesperada. La famosa **danza del ocho** no es solo un baile, sino un lenguaje simbólico que transmite coordenadas precisas. Esta capacidad de procesar información espacial y transmitirla a otros individuos es un ejemplo claro de inteligencia colectiva o &quot;mente de colmena&quot;.
 
@@ -2941,7 +2941,7 @@ En definitiva, las abejas nos enseñan que la colaboración y la comunicación s
 
 * (link: &quot;c) Que la reina controla la mente de todas las obreras.&quot;)[ 
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;La reina emite feromonas, pero la 'mente de colmena' se refiere al conjunto del grupo.&quot;)
+    (alert: &quot;La reina emite feromonas, pero la &#39;mente de colmena&#39; se refiere al conjunto del grupo.&quot;)
 ]
 
 ]
@@ -2949,14 +2949,14 @@ En definitiva, las abejas nos enseñan que la colaboración y la comunicación s
 
 ---
 
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Piensa en qué quiere decir 'mente de colmena', el resumen del capítulo sobre colaboración y el orden temático global de todo el texto.]</tw-passagedata><tw-passagedata pid="34" name="Inici-T2" tags="T2" position="300,700" size="100,100">
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Piensa en qué quiere decir &#39;mente de colmena&#39;, el resumen del capítulo sobre colaboración y el orden temático global de todo el texto.]</tw-passagedata><tw-passagedata pid="34" name="Inici-T2" tags="T2" position="300,700" size="100,100">
 {
-(set: $nom to "")
-(set: $nivell to "")
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "T2")
+(set: $id_text to &quot;T2&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -2966,18 +2966,18 @@ En definitiva, las abejas nos enseñan que la colaboración y la comunicación s
 }
 
 # 🐝 Las abejas — Las constructoras del planeta
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Escribe tu nombre antes de empezar:
 
-(input-box: bind $nom, "")
+(input-box: bind $nom, &quot;&quot;)
 
 Una vez hayas escrito tu nombre, elige tu nivel:
 
-(link: "🌸 Polinizador — Nivel 1")[(set: $nivell to "N1")(go-to: "T2-N1-P1")]
-(link: "🍯 Obrera — Nivel 2")[(set: $nivell to "N2")(go-to: "T2-N2-P1")]
-(link: "👑 Reina — Nivel 3")[(set: $nivell to "N3")(go-to: "T2-N3-P1")]</tw-passagedata><tw-passagedata pid="35" name="Final-T2" tags="T2" position="900,700" size="100,100"># 🏁 ¡Has terminado el texto 2 — Las abejas!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+(link: &quot;🌸 Polinizador — Nivel 1&quot;)[(set: $nivell to &quot;N1&quot;)(go-to: &quot;T2-N1-P1&quot;)]
+(link: &quot;🍯 Obrera — Nivel 2&quot;)[(set: $nivell to &quot;N2&quot;)(go-to: &quot;T2-N2-P1&quot;)]
+(link: &quot;👑 Reina — Nivel 3&quot;)[(set: $nivell to &quot;N3&quot;)(go-to: &quot;T2-N3-P1&quot;)]</tw-passagedata><tw-passagedata pid="35" name="Final-T2" tags="T2" position="900,700" size="100,100"># 🏁 ¡Has terminado el texto 2 — Las abejas!
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 ---
 
 **Nombre:** $nom
@@ -2997,29 +2997,29 @@ Una vez hayas escrito tu nombre, elige tu nivel:
 
 ---
 
-(if: $nivell is "N1")[
+(if: $nivell is &quot;N1&quot;)[
 🌸 **¡Muy bien, Polinizador!** ¡Has aprendido un montón de cosas sobre las abejas! 🐝 Ahora ya sabes por qué son tan importantes para las flores y los frutos. ¡Sigue volando de texto en texto! 🌼
 ]
-(if: $nivell is "N2")[
+(if: $nivell is &quot;N2&quot;)[
 🍯 **¡Excelente trabajo, Obrera!** Has demostrado una gran comprensión de la organización de la colmena y del fascinante proceso de fabricación de la miel. Tu capacidad para conectar ideas es admirable. ¡Sigue adelante! 🌿
 ]
-(if: $nivell is "N3")[
+(if: $nivell is &quot;N3&quot;)[
 👑 **¡Impresionante, Reina!** Has navegado con precisión por conceptos como la *eusocialidad*, la *polinización entomófila* y la *termorregulación*, demostrando una capacidad analítica y crítica excepcional. ¡La colmena te espera! 🔬
 ]
 
 ---
 
-|enviament>[(link: "💾 Enviar datos a la Base Central")[
-    (print: "<script>window.enviarDadesGoogle('" + $nom + "', '" + $nivell + "', " + (str: $encerts) + ", " + (str: $errors) + ", " + (str: $pistes) + ", '" + $id_text + "', " + (str: $encertsL) + ", " + (str: $encertsI) + ", " + (str: $encertsG) + ", " + (str: $totalL) + ", " + (str: $totalI) + ", " + (str: $totalG) + ")</script>")
+|enviament&gt;[(link: &quot;💾 Enviar datos a la Base Central&quot;)[
+    (print: &quot;window.enviarDadesGoogle(&#39;&quot; + $nom + &quot;&#39;, &#39;&quot; + $nivell + &quot;&#39;, &quot; + (str: $encerts) + &quot;, &quot; + (str: $errors) + &quot;, &quot; + (str: $pistes) + &quot;, &#39;&quot; + $id_text + &quot;&#39;, &quot; + (str: $encertsL) + &quot;, &quot; + (str: $encertsI) + &quot;, &quot; + (str: $encertsG) + &quot;, &quot; + (str: $totalL) + &quot;, &quot; + (str: $totalI) + &quot;, &quot; + (str: $totalG) + &quot;)&quot;)
     (replace: ?enviament)[**✅ Dades guardades correctament. Gràcies per participar, $nom!**]
 ]]
 
-(link: "🏠 Volver al inicio")[(go-to: "Inici")]</tw-passagedata><tw-passagedata pid="36" name="T3-N1-P1" tags="T3" position="1100,300" size="100,100"># 🐋 Capítulo 1: ¿Qué son las ballenas?
+(link: &quot;🏠 Volver al inicio&quot;)[(go-to: &quot;Inici&quot;)]</tw-passagedata><tw-passagedata pid="36" name="T3-N1-P1" tags="T3" position="1100,300" size="100,100"># 🐋 Capítulo 1: ¿Qué son las ballenas?
 
 Las **ballenas** son animales muy grandes que viven en el océano. Aunque parecen peces, son **mamíferos**. Esto significa que respiran aire y dan leche a sus crías. Tienen sangre caliente y necesitan salir a la superficie para coger aire a través de un agujero que tienen en la cabeza llamado **espiráculo**.
 
 Son los animales más grandes del mundo. La **ballena azul** puede ser tan larga como tres autobuses juntos. Su cuerpo está lleno de **grasa** para no pasar frío en el agua helada. Son animales muy inteligentes y viven en grupos. Les encanta nadar y saltar por encima del agua.
-
+(display:&quot;T3P1&quot;)
 ---
 
 {
@@ -3065,7 +3065,7 @@ Son los animales más grandes del mundo. La **ballena azul** puede ser tan larga
 Muchas ballenas no tienen dientes. En su lugar tienen **barbas**. Las barbas son como unos pelos largos y fuertes que cuelgan de la boca. Usan estas barbas para **filtrar** el agua y quedarse con el alimento pequeño. Comen unos crustáceos diminutos que se llaman **krill**.
 
 Cuando la ballena tiene hambre, abre la boca muy grande. Toma mucha agua llena de krill. Después, cierra la boca y empuja el agua hacia fuera con la lengua. La comida se queda atrapada en las **barbas** y la ballena puede tragársela. Una ballena puede comer miles de kilos de krill cada día.
-
+(display:&quot;T3P2&quot;)
 ---
 
 {
@@ -3125,7 +3125,7 @@ Cuando la ballena tiene hambre, abre la boca muy grande. Toma mucha agua llena d
 Las ballenas no hablan como nosotros, pero se **comunican**. Emiten unos sonidos muy especiales que llamamos **cantos**. Estos cantos pueden viajar muchos kilómetros bajo el agua. Los machos de ballena jorobada son famosos por hacer las canciones más largas y bonitas del océano.
 
 Usan los cantos para encontrarse entre ellas o para avisar de peligros. Cada grupo de ballenas tiene su propio **estilo** de canción. También usan la **ecolocalización**. Esto es como un radar que les ayuda a saber dónde están las cosas enviando sonidos y escuchando el rebote.
-
+(display:&quot;T3P3&quot;)
 ---
 
 {
@@ -3171,7 +3171,7 @@ Usan los cantos para encontrarse entre ellas o para avisar de peligros. Cada gru
 Las ballenas hacen **migraciones**. Esto significa que viajan de un lugar a otro cada año. En verano van a la Antártida porque hay mucho alimento. Cuando llega el invierno y el agua se congela, viajan hacia lugares más **cálidos**. Recorren miles de kilómetros sin descansar demasiado.
 
 En las aguas cálidas es donde nacen los **ballenatos**. Las madres cuidan muy bien a sus crías. Las crías toman mucha leche para crecer rápido y tener una gruesa capa de grasa. Cuando la cría es fuerte, vuelven a viajar hacia el norte en busca de alimento.
-
+(display:&quot;T3P4&quot;)
 ---
 
 {
@@ -3181,11 +3181,6 @@ En las aguas cálidas es donde nacen los **ballenatos**. Las madres cuidan muy b
 
 (set: $totalL to it + 1)
 **Pregunta 8 (L): ¿Adónde van las ballenas en verano a buscar alimento?**
-
-* (link: &quot;b) A las aguas tropicales del Ecuador.&quot;)[ 
-    (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;Las aguas cálidas son para tener las crías, no para buscar alimento en verano. ¿Qué dice el texto sobre el verano y la Antártida?&quot;)
-]
 
 * (link: &quot;a) A la Antártida.&quot;)[ 
     (if: not $intentFallit)[(set: $encerts to it + 1)(set: $encertsL to it + 1)]
@@ -3231,7 +3226,7 @@ En las aguas cálidas es donde nacen los **ballenatos**. Las madres cuidan muy b
 Hace muchos años, la gente cazaba ballenas para obtener aceite y carne. Ahora, las ballenas están **protegidas** en casi todo el mundo. Pero todavía tienen problemas. La **contaminación** de los océanos con plásticos es muy peligrosa para ellas. A veces confunden el plástico con alimento.
 
 También les molesta el ruido de los grandes barcos. El ruido no les deja escuchar sus **cantos**. Debemos ayudar a mantener el mar limpio para que las ballenas puedan vivir muchos años. Son animales fascinantes que hacen que nuestro planeta sea un lugar mejor y más bonito.
-
+(display:&quot;T3P5&quot;)
 ---
 
 {
@@ -3273,12 +3268,12 @@ También les molesta el ruido de los grandes barcos. El ruido no les deja escuch
 ---
 
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Piensa en todos los temas que has leído (cómo viven, qué comen, cómo se comunican, los viajes) y en el mensaje final del capítulo 5 sobre protegerlas.]</tw-passagedata><tw-passagedata pid="41" name="Inici-T3" tags="T3" position="1000,400" size="100,100">{
-(set: $nom to "")
-(set: $nivell to "")
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "T3")
+(set: $id_text to &quot;T3&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -3288,17 +3283,17 @@ También les molesta el ruido de los grandes barcos. El ruido no les deja escuch
 }
 
 # 🐋 Las ballenas — Los señores del abismo
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Escribe tu nombre antes de empezar:
 
-(input-box: bind $nom, "")
+(input-box: bind $nom, &quot;&quot;)
 
 Una vez hayas escrito tu nombre, elige tu nivel:
 
-(link: "🌊 Marinero — Nivel 1")[(set: $nivell to "N1")(go-to: "T3-N1-P1")]
-(link: "🐋 Cetáceo — Nivel 2")[(set: $nivell to "N2")(go-to: "T3-N2-P1")]
-(link: "🌌 Abisal — Nivel 3")[(set: $nivell to "N3")(go-to: "T3-N3-P1")]</tw-passagedata><tw-passagedata pid="42" name="T3-N2-P1" tags="T3" position="1100,400" size="100,100"># 🐋 Capítulo 1: Gigantes respiratorios
+(link: &quot;🌊 Marinero — Nivel 1&quot;)[(set: $nivell to &quot;N1&quot;)(go-to: &quot;T3-N1-P1&quot;)]
+(link: &quot;🐋 Cetáceo — Nivel 2&quot;)[(set: $nivell to &quot;N2&quot;)(go-to: &quot;T3-N2-P1&quot;)]
+(link: &quot;🌌 Abisal — Nivel 3&quot;)[(set: $nivell to &quot;N3&quot;)(go-to: &quot;T3-N3-P1&quot;)]</tw-passagedata><tw-passagedata pid="42" name="T3-N2-P1" tags="T3" position="1100,400" size="100,100"># 🐋 Capítulo 1: Gigantes respiratorios
 
 Las ballenas pertenecen al grupo de los **cetáceos**. Aunque su anatomía recuerda a la de los peces, la realidad es muy diferente. Como **mamíferos**, las ballenas tienen pulmones y deben emerger a la superficie para renovar el oxígeno. Este proceso lo realizan a través del **espiráculo**, un orificio situado en la parte superior de su cráneo que funciona como nuestras fosas nasales.
 
@@ -3342,9 +3337,9 @@ Son criaturas extremadamente sociales que viven en comunidades organizadas. Esto
                     (set: $intentFallit to false)
                     (go-to: &quot;T3-N2-P2&quot;)
                 ]
-                * (link: &quot;b) Comparar las diferencias entre los cetáceos con dientes y con barbas.&quot;)[
+                * (link: &quot;b) Describir exactamente cómo funcionan las vainas de cetáceos.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
-                    (alert: &quot;El texto habla de sociedad y rasgos físicos, no de 'vainas' como herramienta.&quot;)
+                    (alert: &quot;El texto habla de sociedad y rasgos físicos, no de &#39;vainas&#39; como herramienta.&quot;)
                 ]
                 * (link: &quot;c) Enumerar todas las diferencias que hay entre peces y ballenas.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
@@ -3463,14 +3458,14 @@ Los científicos han descubierto que cada población de ballenas tiene su propio
             {(replace: ?zona_preguntes)[
                 (set: $totalI to it + 1)
                 **Pregunta 9 (I): Si dos ballenas de regiones muy distintas se encontraran, ¿qué podría pasar?**
-                * (link: &quot;a) Podrían tener dificultades para entender sus 'dialectos' diferentes.&quot;)[
+                * (link: &quot;a) Podrían tener dificultades para entender sus &#39;dialectos&#39; diferentes.&quot;)[
                     (if: not $intentFallit)[(set: $encerts to it + 1)(set: $encertsI to it + 1)]
                     (set: $intentFallit to false)
                     (go-to: &quot;T3-N2-P4&quot;)
                 ]
                 * (link: &quot;b) No podrían comunicarse porque no tienen sonidos en común.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
-                    (alert: &quot;Hay 'dialectos', pero no implica que no tengan nada en común.&quot;)
+                    (alert: &quot;Hay &#39;dialectos&#39;, pero no implica que no tengan nada en común.&quot;)
                 ]
                 * (link: &quot;c) Aprenderían el nuevo canto en pocos segundos de manera automática.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
@@ -3487,7 +3482,7 @@ Los científicos han descubierto que cada población de ballenas tiene su propio
 ]
 }
 ---
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Fíjate en los usos de los cantos, la ventaja de la ecolocalización y qué implica el 'dialecto' regional.]</tw-passagedata><tw-passagedata pid="45" name="T3-N2-P4" tags="T3" position="1400,400" size="100,100"># 🌍 Capítulo 4: Odisea marina
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Fíjate en los usos de los cantos, la ventaja de la ecolocalización y qué implica el &#39;dialecto&#39; regional.]</tw-passagedata><tw-passagedata pid="45" name="T3-N2-P4" tags="T3" position="1400,400" size="100,100"># 🌍 Capítulo 4: Odisea marina
 
 Cada año, las ballenas realizan algunas de las **migraciones** más largas del reino animal. Durante el verano, se desplazan hacia las zonas polares donde las aguas son ricas en nutrientes y krill. Allí se alimentan intensamente para acumular grasa. Cuando se acerca el invierno, inician un épico viaje hacia latitudes más bajas para encontrar aguas más templadas y tranquilas.
 
@@ -3591,7 +3586,7 @@ A pesar de los retos, hay motivos para el optimismo. Gracias a las reservas mari
                 **Pregunta 15 (G): ¿Qué relación establece el texto entre las ballenas y la salud del planeta?**
                 * (link: &quot;a) Que las ballenas son el único animal importante para los océanos.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
-                    (alert: &quot;No dice 'el único', sino que son clave para el equilibrio.&quot;)
+                    (alert: &quot;No dice &#39;el único&#39;, sino que son clave para el equilibrio.&quot;)
                 ]
                 * (link: &quot;b) Que proteger las ballenas es una forma de proteger todo el medio marino.&quot;)[
                     (if: not $intentFallit)[(set: $encerts to it + 1)(set: $encertsG to it + 1)]
@@ -3614,7 +3609,7 @@ A pesar de los retos, hay motivos para el optimismo. Gracias a las reservas mari
 }
 ---
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Fíjate en la causa del varamiento por ruido, el cambio de amenazas históricas y la importancia ecológica final.]</tw-passagedata><tw-passagedata pid="47" name="Final-T3" tags="T3" position="1600,400" size="100,100"># 🏁 ¡Has terminado el texto 3 — Las ballenas!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 ---
 
@@ -3635,24 +3630,24 @@ A pesar de los retos, hay motivos para el optimismo. Gracias a las reservas mari
 
 ---
 
-(if: $nivell is "N1")[
+(if: $nivell is &quot;N1&quot;)[
 🌊 **¡Muy bien, Marinero!** ¡Has aprendido cosas increíbles sobre las ballenas! 🐋 Ahora ya sabes que respiran por el espiráculo y que hacen viajes larguísimos por el océano. ¡Sigue navegando por nuevos textos! 💧
 ]
-(if: $nivell is "N2")[
+(if: $nivell is &quot;N2&quot;)[
 🐋 **¡Excelente trabajo, Cetáceo!** Has demostrado una gran comprensión del mundo de los cetáceos, desde sus barbas de queratina hasta las complejas migraciones oceánicas. Tu lectura analítica es admirable. ¡Adelante! 🌊
 ]
-(if: $nivell is "N3")[
-🌌 **¡Impresionante, Abisal!** Has navegado con precisión por conceptos como la *ecolocalización*, el *panículo adiposo* o la *degradación del hábitat marino*, demostrando una capacidad crítica y científica excepcional. ¡El océano profundo no tiene secretos para ti! 🔬
+(if: $nivell is &quot;N3&quot;)[
+🌌 **¡Impresionante, Abisal!** Has navegado con precisión por conceptos como la *ecolocalización*, el *panículo adiposo* o la *polinización entomófila*, demostrando una capacidad crítica y científica excepcional. ¡El océano profundo no tiene secretos para ti! 🔬
 ]
 
 ---
 
-|enviament>[(link: "💾 Enviar datos a la Base Central")[
-    (print: "<script>window.enviarDadesGoogle('" + $nom + "', '" + $nivell + "', " + (str: $encerts) + ", " + (str: $errors) + ", " + (str: $pistes) + ", '" + $id_text + "', " + (str: $encertsL) + ", " + (str: $encertsI) + ", " + (str: $encertsG) + ", " + (str: $totalL) + ", " + (str: $totalI) + ", " + (str: $totalG) + ")</script>")
+|enviament&gt;[(link: &quot;💾 Enviar datos a la Base Central&quot;)[
+    (print: &quot;window.enviarDadesGoogle(&#39;&quot; + $nom + &quot;&#39;, &#39;&quot; + $nivell + &quot;&#39;, &quot; + (str: $encerts) + &quot;, &quot; + (str: $errors) + &quot;, &quot; + (str: $pistes) + &quot;, &#39;&quot; + $id_text + &quot;&#39;, &quot; + (str: $encertsL) + &quot;, &quot; + (str: $encertsI) + &quot;, &quot; + (str: $encertsG) + &quot;, &quot; + (str: $totalL) + &quot;, &quot; + (str: $totalI) + &quot;, &quot; + (str: $totalG) + &quot;)&quot;)
     (replace: ?enviament)[**✅ Dades guardades correctament. Gràcies per participar, $nom!**]
 ]]
 
-(link: "🏠 Volver al inicio")[(go-to: "Inici")]</tw-passagedata><tw-passagedata pid="48" name="T3-N3-P1" tags="T3" position="1100,500" size="100,100"># 🐋 Capítulo 1: Biología y adaptación al medio
+(link: &quot;🏠 Volver al inicio&quot;)[(go-to: &quot;Inici&quot;)]</tw-passagedata><tw-passagedata pid="48" name="T3-N3-P1" tags="T3" position="1100,500" size="100,100"># 🐋 Capítulo 1: Biología y adaptación al medio
 
 Las ballenas representan uno de los casos de evolución más sorprendentes de la naturaleza. Aunque sus antepasados eran mamíferos terrestres, hace millones de años iniciaron un proceso de adaptación al medio acuático que transformó su anatomía de manera radical. Como mamíferos, conservan rasgos fundamentales como la respiración pulmonar, la lactancia y la sangre caliente, elementos que las distinguen claramente de los peces que habitan el mismo ecosistema.
 
@@ -3972,12 +3967,12 @@ Finalmente, la contaminación acústica altera su &quot;paisaje sonoro&quot;, es
 }
 ---
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca la amenaza que altera corrientes, por qué hay más colisiones hoy día y la función ecológica clave de las ballenas al final.]</tw-passagedata><tw-passagedata pid="53" name="Inici-T4" tags="T4" position="1700,200" size="100,100">{
-(set: $nom to "")
-(set: $nivell to "")
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "T4")
+(set: $id_text to &quot;T4&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -3987,17 +3982,17 @@ Finalmente, la contaminación acústica altera su &quot;paisaje sonoro&quot;, es
 }
 
 # 🐻 Los osos — Los gigantes de los bosques
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Escribe tu nombre antes de empezar:
 
-(input-box: bind $nom, "")
+(input-box: bind $nom, &quot;&quot;)
 
 Una vez hayas escrito tu nombre, elige tu nivel:
 
-(link: "🌲 Explorador — Nivel 1")[(set: $nivell to "N1")(go-to: "T4-N1-P1")]
-(link: "🐻 Plantígrado — Nivel 2")[(set: $nivell to "N2")(go-to: "T4-N2-P1")]
-(link: "❄️ Hibernante — Nivel 3")[(set: $nivell to "N3")(go-to: "T4-N3-P1")]</tw-passagedata><tw-passagedata pid="54" name="T4-N1-P1" tags="T4" position="1800,100" size="100,100"># 🐻 Capítulo 1: Un animal muy grande
+(link: &quot;🌲 Explorador — Nivel 1&quot;)[(set: $nivell to &quot;N1&quot;)(go-to: &quot;T4-N1-P1&quot;)]
+(link: &quot;🐻 Plantígrado — Nivel 2&quot;)[(set: $nivell to &quot;N2&quot;)(go-to: &quot;T4-N2-P1&quot;)]
+(link: &quot;❄️ Hibernante — Nivel 3&quot;)[(set: $nivell to &quot;N3&quot;)(go-to: &quot;T4-N3-P1&quot;)]</tw-passagedata><tw-passagedata pid="54" name="T4-N1-P1" tags="T4" position="1800,100" size="100,100"># 🐻 Capítulo 1: Un animal muy grande
 
 Los **osos** son unos animales **mamíferos** muy grandes que viven en muchos lugares del mundo. Tienen el cuerpo lleno de **pelo grueso** para protegerse del frío de las montañas y de los bosques donde suelen vivir. Son animales muy **fuertes** y tienen unas **garras** largas que usan para subirse a los árboles o para buscar comida entre las rocas de forma segura.
 
@@ -4029,7 +4024,7 @@ Estos animales caminan poniendo toda la planta del pie en el suelo, como hacemos
 ]
 * (link: &quot;b) Rápidos&quot;)[
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto dice claramente que son 'plantígrados' por caminar con toda la planta del pie.&quot;)
+    (alert: &quot;El texto dice claramente que son &#39;plantígrados&#39; por caminar con toda la planta del pie.&quot;)
 ]
 ]
 }
@@ -4164,7 +4159,7 @@ La madre osa es muy **protectora** y enseña a sus hijos todo lo que necesitan p
 ]
 * (link: &quot;b) Osos pequeños.&quot;)[
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto usa la palabra concreta 'oseznos' para las crías.&quot;)
+    (alert: &quot;El texto usa la palabra concreta &#39;oseznos&#39; para las crías.&quot;)
 ]
 ]
 }
@@ -4422,7 +4417,7 @@ Cuando los jóvenes osos alcanzan la madurez suficiente, abandonan a la madre pa
 }
 ---
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca cuándo nacen los oseznos, por qué juegan y por qué los osos son generalmente solitarios.]</tw-passagedata><tw-passagedata pid="62" name="Final-T4" tags="T4" position="2300,200" size="100,100"># 🏁 ¡Has terminado el texto 4 — Los osos!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 ---
 
@@ -4443,24 +4438,24 @@ Cuando los jóvenes osos alcanzan la madurez suficiente, abandonan a la madre pa
 
 ---
 
-(if: $nivell is "N1")[
-🌲 **¡Muy bien, Explorador!** ¡Has aprendido muchas cosas sobre los osos! 🐻 Ahora ya sabes que duermen en invierno y que sus crías se llaman oseznos. ¡Sigue explorando el bosque de los textos! 🍯
+(if: $nivell is &quot;N1&quot;)[
+🌲 **¡Muy bien, Explorador!** ¡Has aprendido muchas cosas sobre los osos! 🐻 Ahora ya sabes que duermen en invierno y que sus crías se llaman oseznas. ¡Sigue explorando el bosque de los textos! 🍯
 ]
-(if: $nivell is "N2")[
+(if: $nivell is &quot;N2&quot;)[
 🐻 **¡Excelente trabajo, Plantígrado!** Has demostrado una gran comprensión de la anatomía, la dieta y el ciclo vital de los osos. Tu capacidad para relacionar ideas del texto es admirable. ¡Sigue adelante! 🌲
 ]
-(if: $nivell is "N3")[
+(if: $nivell is &quot;N3&quot;)[
 ❄️ **¡Impresionante, Hibernante!** Has trabajado con precisión conceptos como la *hiperfagia*, la *letargia metabólica* o la *especie paraguas*, demostrando una capacidad de análisis científica y crítica excepcional. ¡El bosque no tiene secretos para ti! 🔬
 ]
 
 ---
 
-|enviament>[(link: "💾 Enviar datos a la Base Central")[
-    (print: "<script>window.enviarDadesGoogle('" + $nom + "', '" + $nivell + "', " + (str: $encerts) + ", " + (str: $errors) + ", " + (str: $pistes) + ", '" + $id_text + "', " + (str: $encertsL) + ", " + (str: $encertsI) + ", " + (str: $encertsG) + ", " + (str: $totalL) + ", " + (str: $totalI) + ", " + (str: $totalG) + ")</script>")
+|enviament&gt;[(link: &quot;💾 Enviar datos a la Base Central&quot;)[
+    (print: &quot;window.enviarDadesGoogle(&#39;&quot; + $nom + &quot;&#39;, &#39;&quot; + $nivell + &quot;&#39;, &quot; + (str: $encerts) + &quot;, &quot; + (str: $errors) + &quot;, &quot; + (str: $pistes) + &quot;, &#39;&quot; + $id_text + &quot;&#39;, &quot; + (str: $encertsL) + &quot;, &quot; + (str: $encertsI) + &quot;, &quot; + (str: $encertsG) + &quot;, &quot; + (str: $totalL) + &quot;, &quot; + (str: $totalI) + &quot;, &quot; + (str: $totalG) + &quot;)&quot;)
     (replace: ?enviament)[**✅ Dades guardades correctament. Gràcies per participar, $nom!**]
 ]]
 
-(link: "🏠 Volver al inicio")[(go-to: "Inici")]</tw-passagedata><tw-passagedata pid="63" name="T4-N3-P1" tags="T4" position="1800,300" size="100,100"># 🐻 Capítulo 1: La ingeniería biológica del oso
+(link: &quot;🏠 Volver al inicio&quot;)[(go-to: &quot;Inici&quot;)]</tw-passagedata><tw-passagedata pid="63" name="T4-N3-P1" tags="T4" position="1800,300" size="100,100"># 🐻 Capítulo 1: La ingeniería biológica del oso
 
 El estudio de la biología de los osos revela una impresionante adaptación evolutiva que les ha permitido colonizar diversos ecosistemas. Como animales plantígrados, su capacidad para distribuir el peso de manera uniforme sobre toda la superficie plantar les permite moverse con sigilo y estabilidad. Esta estructura ósea es fundamental para mantener el equilibrio en terrenos accidentados o troncos resbaladizos de las zonas boscosas.
 
@@ -4786,7 +4781,7 @@ Finalmente, la educación ambiental es clave para la convivencia. Aprender a ges
                 ]
                 * (link: &quot;b) Que los osos son los mejores animales del bosque.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
-                    (alert: &quot;No es una valoración de 'mejores', sino de importancia ecológica.&quot;)
+                    (alert: &quot;No es una valoración de &#39;mejores&#39;, sino de importancia ecológica.&quot;)
                 ]
                 * (link: &quot;c) Que hay que proteger a los osos para mantener el equilibrio de la naturaleza.&quot;)[
                     (if: not $intentFallit)[(set: $encerts to it + 1)(set: $encertsG to it + 1)]
@@ -4858,7 +4853,7 @@ En conclusión, la preservación del oso es un compromiso que va más allá de l
                 ]
                 * (link: &quot;b) Que le gusta protegerse de la lluvia bajo los árboles.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
-                    (alert: &quot;No es literal; 'paraguas' hace referencia a protección ecológica.&quot;)
+                    (alert: &quot;No es literal; &#39;paraguas&#39; hace referencia a protección ecológica.&quot;)
                 ]
                 * (link: &quot;c) Que es el animal más grande y fuerte de todos los bosques.&quot;)[
                     (set: $errors to it + 1)(set: $intentFallit to true)
@@ -4879,13 +4874,13 @@ En conclusión, la preservación del oso es un compromiso que va más allá de l
 ]
 }
 ---
-(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca el efecto de la fragmentación en la genética, qué pasa si salen antes de la hibernación y qué quiere decir 'especie paraguas'.]</tw-passagedata><tw-passagedata pid="70" name="Inici-T5" tags="T5" position="1700,700" size="100,100">{
-(set: $nom to "")
-(set: $nivell to "")
+(link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Busca el efecto de la fragmentación en la genética, qué pasa si salen antes de la hibernación y qué quiere decir &#39;especie paraguas&#39;.]</tw-passagedata><tw-passagedata pid="70" name="Inici-T5" tags="T5" position="1700,700" size="100,100">{
+(set: $nom to &quot;&quot;)
+(set: $nivell to &quot;&quot;)
 (set: $encerts to 0)
 (set: $errors to 0)
 (set: $pistes to 0)
-(set: $id_text to "T5")
+(set: $id_text to &quot;T5&quot;)
 (set: $encertsL to 0)
 (set: $encertsI to 0)
 (set: $encertsG to 0)
@@ -4895,17 +4890,17 @@ En conclusión, la preservación del oso es un compromiso que va más allá de l
 }
 
 # 🦅 Las águilas — Las reinas del cielo
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T5-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T5-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 Escribe tu nombre antes de empezar:
 
-(input-box: bind $nom, "")
+(input-box: bind $nom, &quot;&quot;)
 
 Una vez hayas escrito tu nombre, elige tu nivel:
 
-(link: "🪶 Polluelo — Nivel 1")[(set: $nivell to "N1")(go-to: "T5-N1-P1")]
-(link: "🦅 Rapaz — Nivel 2")[(set: $nivell to "N2")(go-to: "T5-N2-P1")]
-(link: "🌤️ Termálico — Nivel 3")[(set: $nivell to "N3")(go-to: "T5-N3-P1")]</tw-passagedata><tw-passagedata pid="71" name="T5-N1-P1" tags="T5" position="1800,600" size="100,100"># 🦅 Capítulo 1: Las reinas del cielo
+(link: &quot;🪶 Polluelo — Nivel 1&quot;)[(set: $nivell to &quot;N1&quot;)(go-to: &quot;T5-N1-P1&quot;)]
+(link: &quot;🦅 Rapaz — Nivel 2&quot;)[(set: $nivell to &quot;N2&quot;)(go-to: &quot;T5-N2-P1&quot;)]
+(link: &quot;🌤️ Termálico — Nivel 3&quot;)[(set: $nivell to &quot;N3&quot;)(go-to: &quot;T5-N3-P1&quot;)]</tw-passagedata><tw-passagedata pid="71" name="T5-N1-P1" tags="T5" position="1800,600" size="100,100"># 🦅 Capítulo 1: Las reinas del cielo
 
 Las **águilas** son aves rapaces muy grandes y fuertes que viven en casi todo el mundo. Tienen unas **alas anchas** que les permiten volar muy alto sin cansarse nada. Estos animales son famosos por su **gran vista**, ya que pueden ver una presa pequeña desde mucha distancia.
 
@@ -4974,7 +4969,7 @@ Gracias a esta visión tan buena, pueden detectar movimientos muy pequeños entr
 ]
 * (link: &quot;b) Diez veces.&quot;)[
     (set: $errors to it + 1)(set: $intentFallit to true)
-    (alert: &quot;El texto dice exactamente 'cuatro veces', no diez.&quot;)
+    (alert: &quot;El texto dice exactamente &#39;cuatro veces&#39;, no diez.&quot;)
 ]
 ]
 }
@@ -5115,7 +5110,7 @@ Los científicos estudian las águilas para saber cómo ayudarlas a sobrevivir y
 }
 ---
 (link-reveal: &quot;💡 Pista&quot;)[(set: $pistes to it + 1) Repasa de qué habla todo el texto y cuál es el mensaje final sobre proteger la naturaleza y las águilas.]</tw-passagedata><tw-passagedata pid="76" name="Final-T5" tags="T5" position="2300,700" size="100,100"># 🏁 ¡Has terminado el texto 5 — Las águilas!
-<img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T5-P0.jpg" style="width:100%; border-radius:10px; margin: 1em 0;">
+&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T5-P0.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 
 ---
 
@@ -5136,24 +5131,24 @@ Los científicos estudian las águilas para saber cómo ayudarlas a sobrevivir y
 
 ---
 
-(if: $nivell is "N1")[
+(if: $nivell is &quot;N1&quot;)[
 🪶 **¡Muy bien, Polluelo!** ¡Has aprendido cosas increíbles sobre las águilas! 🦅 Ahora ya sabes que tienen una vista increíble y que construyen nidos enormes en las alturas. ¡Pronto serás un gran rapaz! 🌄
 ]
-(if: $nivell is "N2")[
+(if: $nivell is &quot;N2&quot;)[
 🦅 **¡Excelente trabajo, Rapaz!** Has demostrado una gran comprensión de la anatomía, las técnicas de caza y los retos de conservación de estas aves majestuosas. Tu lectura ha sido precisa y ágil. ¡Sigue volando alto! 🪶
 ]
-(if: $nivell is "N3")[
+(if: $nivell is &quot;N3&quot;)[
 🌤️ **¡Impresionante, Termálico!** Has planeado con destreza por conceptos como las *corrientes térmicas*, el *espectro ultravioleta* o los *corredores ecológicos*, demostrando una capacidad analítica y crítica de primer nivel. ¡El cielo es tu límite! 🔬
 ]
 
 ---
 
-|enviament>[(link: "💾 Enviar datos a la Base Central")[
-    (print: "<script>window.enviarDadesGoogle('" + $nom + "', '" + $nivell + "', " + (str: $encerts) + ", " + (str: $errors) + ", " + (str: $pistes) + ", '" + $id_text + "', " + (str: $encertsL) + ", " + (str: $encertsI) + ", " + (str: $encertsG) + ", " + (str: $totalL) + ", " + (str: $totalI) + ", " + (str: $totalG) + ")</script>")
+|enviament&gt;[(link: &quot;💾 Enviar datos a la Base Central&quot;)[
+    (print: &quot;window.enviarDadesGoogle(&#39;&quot; + $nom + &quot;&#39;, &#39;&quot; + $nivell + &quot;&#39;, &quot; + (str: $encerts) + &quot;, &quot; + (str: $errors) + &quot;, &quot; + (str: $pistes) + &quot;, &#39;&quot; + $id_text + &quot;&#39;, &quot; + (str: $encertsL) + &quot;, &quot; + (str: $encertsI) + &quot;, &quot; + (str: $encertsG) + &quot;, &quot; + (str: $totalL) + &quot;, &quot; + (str: $totalI) + &quot;, &quot; + (str: $totalG) + &quot;)&quot;)
     (replace: ?enviament)[**✅ Dades guardades correctament. Gràcies per participar, $nom!**]
 ]]
 
-(link: "🏠 Volver al inicio")[(go-to: "Inici")]</tw-passagedata><tw-passagedata pid="77" name="T5-N2-P1" tags="T5" position="1800,700" size="100,100"># 🦅 Capítulo 1: Grandes depredadores del aire
+(link: &quot;🏠 Volver al inicio&quot;)[(go-to: &quot;Inici&quot;)]</tw-passagedata><tw-passagedata pid="77" name="T5-N2-P1" tags="T5" position="1800,700" size="100,100"># 🦅 Capítulo 1: Grandes depredadores del aire
 
 Las águilas son aves rapaces diurnas que pertenecen a la familia de los accipítridos, conocidas en todo el mundo por su **majestuosidad**. Estas aves presentan una complexión física robusta, con una musculatura poderosa que les permite realizar vuelos de larga duración. Su presencia es fundamental para mantener el equilibrio natural de los ecosistemas donde habitan habitualmente.
 
@@ -5797,9 +5792,9 @@ En conclusión, el destino de las águilas está estrechamente ligado a nuestra 
 </tw-passagedata><tw-passagedata pid="95" name="T2P4" tags="" position="700,500" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="96" name="T2P5" tags="" position="800,500" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T2-P5.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="97" name="T3P1" tags="" position="1100,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="98" name="T3P2" tags="" position="1200,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P2.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="99" name="T3P3" tags="" position="1300,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P3.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
-</tw-passagedata><tw-passagedata pid="100" name="T3P4" tags="" position="1400,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="98" name="T3P2" tags="" position="1200,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="99" name="T3P3" tags="" position="1300,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P4.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="100" name="T3P4" tags="" position="1400,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P3.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="101" name="T3P5" tags="" position="1500,200" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T3-P5.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="102" name="T4P1" tags="" position="1800,0" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P1.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;
 </tw-passagedata><tw-passagedata pid="103" name="T4P2" tags="" position="1900,0" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/bitlector-animals/T4-P2.jpg&quot; style=&quot;width:100%; border-radius:10px; margin: 1em 0;&quot;&gt;

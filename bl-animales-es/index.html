@@ -307,7 +307,7 @@ async function generarHTML() {
   const successEl = document.getElementById('successMsg');
   const btn = document.getElementById('btnDownload');
 
-  let formID = urlInput.match(/\/e\/([^\/]+)/)?.[1] || urlInput;
+  let formID = urlInput.match(/\/forms\/d\/e\/([^\/\?]+)/)?.[1] || urlInput;
   if (formID.length < 20) {
     errorEl.style.display = 'block';
     return;

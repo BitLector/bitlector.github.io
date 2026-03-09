@@ -3,348 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BitLector — BL-Contes-CAT [Contes Clàssics-CAT]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>BitLector — BL-Aven-CAT [5è-1r ESO, Aventures i expedicions]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Space+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1a1a2e;
-      --paper: #faf8f3;
-      --accent: #c84b31;
-      --accent2: #2d6a4f;
-      --gold: #e9c46a;
-      --muted: #7a7568;
-      --border: #e2ddd5;
-      --success: #2d6a4f;
+      --coral: #E05C3A;
+      --coral-clar: #F0957A;
+      --terracota: #8B2A14;
+      --tinta: #2A1810;
+      --crema: #FDF6EE;
+      --border: #e2d5c9;
+      --muted: #6b5e52;
     }
 
     body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
+      background: var(--crema);
+      color: var(--tinta);
+      font-family: 'Nunito', sans-serif;
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23faf8f3'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23e8e3d9' opacity='0.4'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    header {
-      position: relative;
-      z-index: 1;
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(to bottom, #fff, var(--paper));
-    }
-
-    .logo-container {
-      margin-bottom: 1.8rem;
-    }
-    .logo-container img {
-      max-width: 240px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .paquet-tag {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 2px;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.8rem;
-    }
-
-    h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
-
-    h1 em { color: var(--accent); font-style: italic; }
-
-    .subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto;
       line-height: 1.6;
     }
 
-    .flux {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      padding: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .flux-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 1rem 1.2rem;
-    }
-
-    .flux-icon { font-size: 1.8rem; line-height: 1; }
-
-    .flux-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
+    header {
       text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      background: linear-gradient(to bottom, #fff, var(--crema));
+      border-bottom: 1px solid var(--border);
     }
 
-    .flux-arrow {
-      color: var(--border);
-      font-size: 1.4rem;
-      padding: 0 0.2rem;
-      align-self: center;
+    .logo {
+      font-family: 'Nunito Black', 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      color: var(--tinta);
+      margin-bottom: 0.5rem;
     }
 
-    .flux-step.highlight .flux-icon {
-      background: var(--accent2);
+    .logo span { color: var(--coral); }
+
+    .tag {
+      display: inline-block;
+      background: var(--coral);
       color: white;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.95rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 4px;
+      margin: 1rem 0;
     }
-
-    .flux-step.highlight .flux-label { color: var(--accent2); font-weight: 600; }
 
     main {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 0 1.5rem 4rem;
+      padding: 2rem 1.5rem 4rem;
     }
 
     .card {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 4px;
-      box-shadow: 0 2px 20px rgba(26,26,46,0.06), 0 1px 4px rgba(26,26,46,0.04);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(42,24,16,0.08);
+      margin-bottom: 2rem;
       overflow: hidden;
     }
 
     .card-header {
-      background: var(--ink);
-      padding: 1.5rem 2rem;
+      background: var(--tinta);
+      color: white;
+      padding: 1.4rem 2rem;
       display: flex;
       align-items: center;
       gap: 1rem;
     }
 
     .step-num {
-      width: 32px;
-      height: 32px;
-      border: 1.5px solid var(--gold);
-      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      background: var(--coral);
+      color: white;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--gold);
+      border-radius: 50%;
       flex-shrink: 0;
     }
 
     .card-header h2 {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
     }
 
-    .card-body { padding: 2rem; }
+    .card-body {
+      padding: 2rem;
+    }
 
     .instruction {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.65;
+      font-size: 1.05rem;
       margin-bottom: 1.5rem;
     }
 
-    .instruction strong { color: var(--ink); font-weight: 500; }
+    .instruction strong { color: var(--tinta); }
 
-    .input-group { margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-block;
+      background: var(--coral);
+      color: white;
+      padding: 1rem 1.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--terracota); }
+
+    .input-group {
+      margin: 1.5rem 0;
+    }
 
     label {
       display: block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 0.85rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 3px;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.88rem;
-      color: var(--ink);
-      background: var(--paper);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
+      padding: 0.9rem 1.2rem;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      background: var(--crema);
     }
 
     input[type="text"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(200,75,49,0.08);
-      background: white;
+      border-color: var(--coral);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(224,92,58,0.2);
     }
 
-    input[type="text"]::placeholder { color: #c5bfb5; }
+    .error { color: #c94c3a; font-size: 0.9rem; margin-top: 0.5rem; display: none; }
 
-    .btn-download {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 3px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-download:hover { background: #b03d28; }
-
-    .error-msg { color: var(--accent); display: none; margin-top: 0.8rem; font-size: 0.9rem; }
-    .success-msg { display: none; margin-top: 1.2rem; color: var(--success); font-size: 0.95rem; }
+    .success { color: var(--terracota); font-weight: 700; margin-top: 1rem; display: none; }
 
     footer {
-      position: relative;
-      z-index: 1;
       text-align: center;
       padding: 2rem;
-      font-size: 0.78rem;
       color: var(--muted);
-      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="https://raw.githubusercontent.com/BitLector/bitlector-imatges/refs/heads/main/marcabl/bitlector_logo_requadre_horitzontal.png" alt="BitLector">
-  </div>
-  <div class="paquet-tag">BL-Contes-CAT · Contes Clàssics · Català</div>
-  <h1>BitLector Contes Clàssics<br><em>Comprensió lectora</em></h1>
-  <p class="subtitle">En dos minuts tindràs el fitxer personalitzat per als teus alumnes, amb connexió directa al teu Google Form.</p>
+  <div class="logo">Bit<span>LECTOR</span></div>
+  <div class="tag">BL-Aven-CAT · 5è-1r ESO · Aventures i expedicions · Català</div>
 </header>
 
 <main>
-
-  <div class="flux">
-    <div class="flux-step highlight">
-      <div class="flux-icon">⚙️</div>
-      <div class="flux-label">Configura</div>
-    </div>
-    <div class="flux-arrow">→</div>
-    <div class="flux-step">
-      <div class="flux-icon">📥</div>
-      <div class="flux-label">Descarrega</div>
-    </div>
-    <div class="flux-arrow">→</div>
-    <div class="flux-step">
-      <div class="flux-icon">👩‍🎓</div>
-      <div class="flux-label">Comparteix</div>
-    </div>
-  </div>
-
   <div class="card">
     <div class="card-header">
       <div class="step-num">1</div>
-      <h2>Fes una còpia del formulari base</h2>
+      <h2>Fes una còpia del formulari</h2>
     </div>
     <div class="card-body">
       <p class="instruction">
-        Clica el botó per crear el teu propi Google Form on arribaran les respostes dels alumnes. Google et demanarà confirmació — clica <strong>"Fer una còpia"</strong>.
+        Clica el botó següent per fer la teva pròpia còpia del formulari de recollida de dades. Google et demanarà confirmació → accepta.
       </p>
-      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy" target="_blank" style="text-decoration:none;">
-        <button class="btn-download">
-          📋 Fer una còpia del formulari
-        </button>
+      <a href="https://docs.google.com/forms/d/1WZGCYa88OOLNM-TPJH0gRGdMsbTpp6U8eAlHfV2Ml3s/copy" target="_blank" class="btn">
+        📋 Fer còpia del formulari
       </a>
-      <div class="instruction" style="margin-top:1.5rem;">
-        Un cop obert el teu formulari, clica <strong>"Publica"</strong> (dalt a la dreta) → icona 🔗 → copia la URL sencera que apareix. La necessitaràs al pas següent.
-      </div>
+      <p style="margin-top:1.5rem;">
+        Un cop obert el teu formulari → clica <strong>Publica</strong> (dalt a la dreta) → icona d'enllaç 🔗 → copia la URL completa.
+      </p>
     </div>
   </div>
 
   <div class="card">
     <div class="card-header">
       <div class="step-num">2</div>
-      <h2>Enganxa la URL i descarrega el fitxer</h2>
+      <h2>Enganxa la URL del teu formulari</h2>
     </div>
     <div class="card-body">
       <p class="instruction">
-        Enganxa la URL completa del teu formulari publicat aquí:
+        Enganxa aquí la URL sencera del teu formulari publicat (comença per https://docs.google.com/forms/d/e/...).
       </p>
 
-      <div class="url-example" style="background:var(--paper); border:1px solid var(--border); border-radius:3px; padding:0.85rem 1rem; font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--muted); margin-bottom:1.5rem; word-break:break-all;">
-        Exemple: <span style="color:var(--accent); font-weight:500;">https://docs.google.com/forms/d/e/1FAIpQLSc.../viewform</span>
-      </div>
-
       <div class="input-group">
-        <label for="formURL" style="display:block; font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem;">URL del teu Google Form</label>
-        <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLSc..." autocomplete="off">
+        <label for="formURL">URL del teu Google Form</label>
+        <input type="text" id="formURL" placeholder="https://docs.google.com/forms/d/e/1FAIpQLS.../viewform">
+        <div class="error" id="errorMsg">Si us plau, enganxa una URL vàlida completa del formulari.</div>
       </div>
 
-      <div id="errorMsg" class="error-msg">Si us plau, enganxa la URL completa i vàlida del teu formulari.</div>
-
-      <button class="btn-download" id="btnDownload" onclick="generarHTML()">
-        ⬇️ Descarregar el meu programa configurat
+      <button id="btnGenerar" class="btn" style="width:100%; font-size:1.1rem; padding:1.2rem;">
+        ⬇️ Descarregar el meu programa BL-Aventures-CAT
       </button>
 
-      <div id="successMsg" class="success-msg">
-        El fitxer <strong>BitLector Contes Clàssics CAT.html</strong> s'ha descarregat correctament!<br>
-        Recorda: és personal i intransferible. Comparteix-lo només amb els teus alumnes del teu centre.
+      <div class="success" id="successMsg">
+        ✅ Fitxer BL-Aventures-CAT.html descarregat! Obre'l al navegador per provar-lo.
       </div>
     </div>
   </div>
-
 </main>
 
 <footer>
-  BitLector · BL-Contes-CAT [Contes Clàssics-CAT] · Ús personal i intransferible – les dades van directament al teu Drive
+  BitLector · Les dades van directament al teu Google Drive · v2026
 </footer>
 
 <script>
+// ─── IDs dels camps del formulari (fixos) ───────────────────────────────────
 const ENTRY_NOM      = "entry.810214983";
 const ENTRY_NIVELL   = "entry.1550878135";
 const ENTRY_ENCERTS  = "entry.1012154125";
@@ -358,40 +238,46 @@ const ENTRY_TOTAL_I   = "entry.1047048577";
 const ENTRY_ENCERTS_G = "entry.1992687778";
 const ENTRY_TOTAL_G   = "entry.1578007194";
 
+// ─── Funció que s'injectarà al Twine ───────────────────────────────────────
 function getJavascriptTwine(formID) {
   return `window.enviarDadesGoogle = function(nom, nivell, encerts, errors, pistes, idText, encertsL, encertsI, encertsG, totalL, totalI, totalG) {
-    var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
-    var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
-    var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
-    var formID = "${formID}";
-    var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
-      "${ENTRY_NOM}=" + encodeURIComponent(nom) + "&" +
-      "${ENTRY_NIVELL}=" + encodeURIComponent(nivell) + "&" +
-      "${ENTRY_ENCERTS}=" + encerts + "&" +
-      "${ENTRY_ERRORS}=" + errors + "&" +
-      "${ENTRY_PISTES}=" + pistes + "&" +
-      "${ENTRY_TEXT}=" + encodeURIComponent(idText) + "&" +
-      "${ENTRY_ENCERTS_L}=" + encertsL + "&" +
-      "${ENTRY_TOTAL_L}=" + totalL + "&" +
-      "${ENTRY_ENCERTS_I}=" + encertsI + "&" +
-      "${ENTRY_TOTAL_I}=" + totalI + "&" +
-      "${ENTRY_ENCERTS_G}=" + encertsG + "&" +
-      "${ENTRY_TOTAL_G}=" + totalG;
-    fetch(url, { mode: 'no-cors' });
-    alert("Molt bé, " + nom + "!\\n" +
-          "Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
-          "Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
-          "Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)");
-  };`;
+  var pctL = totalL > 0 ? Math.round(encertsL / totalL * 100) : 0;
+  var pctI = totalI > 0 ? Math.round(encertsI / totalI * 100) : 0;
+  var pctG = totalG > 0 ? Math.round(encertsG / totalG * 100) : 0;
+  var formID = "${formID}";
+  var url = "https://docs.google.com/forms/d/e/" + formID + "/formResponse?" +
+    "${ENTRY_NOM}="      + encodeURIComponent(nom)    + "&" +
+    "${ENTRY_NIVELL}="   + encodeURIComponent(nivell) + "&" +
+    "${ENTRY_ENCERTS}="  + encerts                    + "&" +
+    "${ENTRY_ERRORS}="   + errors                     + "&" +
+    "${ENTRY_PISTES}="   + pistes                     + "&" +
+    "${ENTRY_TEXT}="     + encodeURIComponent(idText) + "&" +
+    "${ENTRY_ENCERTS_L}=" + encertsL                  + "&" +
+    "${ENTRY_TOTAL_L}="   + totalL                    + "&" +
+    "${ENTRY_ENCERTS_I}=" + encertsI                  + "&" +
+    "${ENTRY_TOTAL_I}="   + totalI                    + "&" +
+    "${ENTRY_ENCERTS_G}=" + encertsG                  + "&" +
+    "${ENTRY_TOTAL_G}="   + totalG;
+  fetch(url, { mode: 'no-cors' });
+  alert("Genial, " + nom + "! 🚀\\n" +
+        "Literals: " + encertsL + "/" + totalL + " (" + pctL + "%)\\n" +
+        "Inferencials: " + encertsI + "/" + totalI + " (" + pctI + "%)\\n" +
+        "Globals: " + encertsG + "/" + totalG + " (" + pctG + "%)\\n\\n" +
+        "Continua explorant aventures!");
+};`;
 }
 
-async function generarHTML() {
-  const inputVal = document.getElementById('formURL').value.trim();
+// ─── Lògica de generació i descàrrega ──────────────────────────────────────
+document.getElementById('btnGenerar').addEventListener('click', async () => {
+  const urlInput = document.getElementById('formURL').value.trim();
   const errorMsg = document.getElementById('errorMsg');
   const successMsg = document.getElementById('successMsg');
-  const btn = document.getElementById('btnDownload');
+  const btn = document.getElementById('btnGenerar');
 
-  let formID = inputVal.match(/\/forms\/d\/e\/([^\/\?]+)/)?.[1] || inputVal;
+  let formID = urlInput;
+  const match = urlInput.match(/\/d\/e\/([^\/]+)/);
+  if (match) formID = match[1];
+
   if (!formID || formID.length < 20) {
     errorMsg.style.display = 'block';
     return;
@@ -399,39 +285,31 @@ async function generarHTML() {
   errorMsg.style.display = 'none';
 
   btn.disabled = true;
-  btn.innerHTML = '<span>⏳</span> Generant el fitxer...';
+  btn.innerHTML = '⏳ Generant...';
 
   try {
-    const response = await fetch('base.html');
-    if (!response.ok) throw new Error('No s\'ha pogut carregar base.html');
-    let contingut = await response.text();
+    const response = await fetch('https://bitlector.github.io/bl-aventures-cat/base.html');
+    if (!response.ok) throw new Error('No es troba base.html');
+    let htmlBase = await response.text();
 
-    const jsPersonalitzat = getJavascriptTwine(formID);
-    contingut = contingut.replace('/* INJECT_ENVIAR_DADES */', jsPersonalitzat);
+    const jsInject = getJavascriptTwine(formID);
+    htmlBase = htmlBase.replace('/* INJECT_ENVIAR_DADES */', jsInject);
 
-    const blob = new Blob([contingut], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
+    const blob = new Blob([htmlBase], { type: 'text/html;charset=utf-8' });
+    const urlBlob = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'BitLector Contes Clàssics CAT.html';
-    document.body.appendChild(a);
+    a.href = urlBlob;
+    a.download = 'BL-Aventures-CAT.html';
     a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(urlBlob);
 
     successMsg.style.display = 'block';
-
   } catch (err) {
-    alert('Error: ' + err.message + '\n\nAssegura\'t que el fitxer base.html està pujat al repositori.');
+    alert('Error al generar el fitxer:\n' + err.message + '\nAssegura\'t que base.html està disponible.');
   }
 
   btn.disabled = false;
-  btn.innerHTML = '<span>⬇️</span> Descarregar el meu programa configurat';
-}
-
-document.getElementById('formURL').addEventListener('input', () => {
-  document.getElementById('errorMsg').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'none';
+  btn.innerHTML = '⬇️ Descarregar el meu programa BL-Aventures-CAT';
 });
 </script>
 </body>

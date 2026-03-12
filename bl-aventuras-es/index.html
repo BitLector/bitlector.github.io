@@ -290,7 +290,7 @@ document.getElementById('btnGenerar').addEventListener('click', async () => {
   btn.innerHTML = '⏳ Generando...';
 
   try {
-    const response = await fetch('https://bitlector.github.io/bl-aventuras-es/BitLectorl-Aventuras-ESP.html');
+    const response = await fetch('https://bitlector.github.io/bl-aventuras-es/base.html');
     if (!response.ok) throw new Error('No se encuentra BitLectorl-Aventuras-ESP.html');
     let htmlBase = await response.text();
 
